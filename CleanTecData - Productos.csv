@@ -1,0 +1,360 @@
+name,description,price,price2,image_url,category
+ABRILLANTADOR DE LLANTAS CLEAN TEC 1 LT,Descripcion del producto,84.24,0.00,public/images/cleantec-logo.png,Para Autos
+ABRILLANTADOR EN GALON 3.75,Descripcion del producto,362.88,0.00,public/images/cleantec-logo.png,Para Autos
+ABRILLANTADOR EN GALON CLEAN TEC,Descripcion del producto,375.73,0.00,public/images/cleantec-logo.png,Para Autos
+ABRILLANTADOR DE INTERIORES,Descripcion del producto,102.06,0.00,public/images/cleantec-logo.png,Para Autos
+ACIDO MURIATICO EN GALON,Descripcion del producto,145.15,0.00,public/images/cleantec-logo.png,Desinfectante
+ACIDO MURIATICO SULTAN 900ML,Descripcion del producto,34.56,32.07,public/images/cleantec-logo.png,Desinfectante
+ACIDO TIBOR PURO,Descripcion del producto,"4,816.38",0.00,public/images/cleantec-logo.png,Desinfectante
+AGUA PURIFICADA 40/500,Descripcion del producto,136.31,0.00,public/images/cleantec-logo.png,Otros
+AJAX LIQUIDO LIMON 5LT,Descripcion del producto,244.90,227.40,public/images/cleantec-logo.png,Limpieza
+APLICADOR MULTIUSOS 2 PIEZAS,Descripcion del producto,19.66,0.00,public/images/cleantec-logo.png,Otros
+ARIEL BLACK 8.5L,Descripcion del producto,375.30,0.00,public/images/cleantec-logo.png,Detergente
+ARIEL PODS 3/1,Descripcion del producto,466.79,0.00,public/images/cleantec-logo.png,Detergente
+ARIEL VIVID 8.5L,Descripcion del producto,335.34,0.00,public/images/cleantec-logo.png,Detergente
+AROMATIZANTE AIR WICK,Descripcion del producto,485.52,450.84,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE AIR WICK,Descripcion del producto,460.00,450.36,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE AIR WICK COCONUT BERRIES,Descripcion del producto,485.03,0.00,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE AIR WICK DURAZNO/MANGO,Descripcion del producto,447.96,0.00,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE AIR WICK FLORES HAWA,Descripcion del producto,455.75,450.84,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE AIR WICK PANQUE NAVIDEÑO,Descripcion del producto,460.08,388.80,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE AMBIENTAL,Descripcion del producto,440.64,0.00,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE ARQUIM 500ML DARK,Descripcion del producto,196.56,182.52,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE ARQUIM BOUQUET 500ML,Descripcion del producto,213.84,199.80,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE ARQUIM CARRO NUEVO,Descripcion del producto,196.56,182.52,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE ARQUIM CEREZA,Descripcion del producto,196.56,182.52,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE ARQUIM CHICLE,Descripcion del producto,197.12,0.00,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE ARQUIM DRAKAR,Descripcion del producto,197.12,0.00,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE ARQUIM HUGO,Descripcion del producto,197.12,0.00,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE ARQUIM LIZ GARDEN,Descripcion del producto,197.12,0.00,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE ARQUIM MANZANA CANELA,Descripcion del producto,196.56,182.52,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE ARQUIM PIÑA MANGO,Descripcion del producto,197.12,0.00,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE ARQUIM TROPICAL,Descripcion del producto,197.12,0.00,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE ARQUIM VARIOS AROMAS 60ML,Descripcion del producto,50.54,0.00,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE EN AEROSOL GLADE (PERA),Descripcion del producto,64.09,62.14,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE FEBREZE HAWAIIAN ALOHA 250G,Descripcion del producto,88.80,104.94,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE FEBREZE LINEN & SKY,Descripcion del producto,105.85,104.94,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE FEBREZE OCEAN,Descripcion del producto,105.85,104.92,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE FRESH LEMON,Descripcion del producto,105.85,104.87,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE GLADE,Descripcion del producto,61.79,0.00,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE GLADE 227G,Descripcion del producto,53.71,49.86,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE GLADE MERRY CHERRY,Descripcion del producto,64.09,62.14,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE GLADE WINTER NIGTH,Descripcion del producto,64.09,62.14,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE HUELE MACHIN,Descripcion del producto,140.78,0.00,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE NICE FRESH BOUQUET,Descripcion del producto,161.46,0.00,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE NICE FRESH VARIOS AROMAS,Descripcion del producto,147.42,0.00,public/images/cleantec-logo.png,Aromatizante
+AROMATIZANTE LAVANDA/LIRIOS,Descripcion del producto,485.03,0.00,public/images/cleantec-logo.png,Aromatizante
+ATOMIZADOR DE 1/2 LITRO,Descripcion del producto,29.08,22.62,public/images/cleantec-logo.png,Otros
+ATOMIZADOR DE 1 LITRO,Descripcion del producto,27.23,26.87,public/images/cleantec-logo.png,Otros
+ATOMIZADOR GRIS 1LT,Descripcion del producto,68.31,0.00,public/images/cleantec-logo.png,Otros
+AWESOME 32 OZ,Descripcion del producto,37.00,38.83,public/images/cleantec-logo.png,Otros
+AZUCAR REFINADA 10/1 KG ZULKA,Descripcion del producto,385.32,0.00,public/images/cleantec-logo.png,Alimentos
+BANDEJA DE HORNO OVALADA,Descripcion del producto,16.21,0.00,public/images/cleantec-logo.png,Otros
+BANDEJA DE HORNO RECTANGULAR,Descripcion del producto,10.15,0.00,public/images/cleantec-logo.png,Otros
+BASE CON LLANTAS,Descripcion del producto,"1,239.84","1,239.84",public/images/cleantec-logo.png,Otros
+BASE METALICA 40CM,Descripcion del producto,114.31,106.14,public/images/cleantec-logo.png,Otros
+BASE METALICA 60CM,Descripcion del producto,127.37,118.27,public/images/cleantec-logo.png,Otros
+BASE METALICA 90CM,Descripcion del producto,136.61,127.36,public/images/cleantec-logo.png,Otros
+BLANQUEADOR BLANCATEL GALON,Descripcion del producto,54.95,51.02,public/images/cleantec-logo.png,Detergente
+BLANQUEADOR CLORALEX 10LT,Descripcion del producto,175.81,163.44,public/images/cleantec-logo.png,Detergente
+BLANQUEADOR CLORALEX 500,Descripcion del producto,9.97,0.00,public/images/cleantec-logo.png,Detergente
+BLANQUEADOR CLORALEX 950ML,Descripcion del producto,19.44,19.96,public/images/cleantec-logo.png,Detergente
+BLANQUEADOR CLORALEX GALON,Descripcion del producto,56.13,53.04,public/images/cleantec-logo.png,Detergente
+BLANQUEADOR CLORO AWESOME,Descripcion del producto,69.53,66.95,public/images/cleantec-logo.png,Detergente
+BLANQUEADOR CLOROX 930ML,Descripcion del producto,16.56,14.55,public/images/cleantec-logo.png,Detergente
+BLANQUEADOR MM 20 LITROS,Descripcion del producto,288.37,304.78,public/images/cleantec-logo.png,Detergente
+BOLSA CAMISETA 500 PIEZAS,Descripcion del producto,202.61,0.00,public/images/cleantec-logo.png,Otros
+BOLSA CAMISETA C/500,Descripcion del producto,190.94,0.00,public/images/cleantec-logo.png,Otros
+BOLSA DE ROLLO NEGRA 55 GAL C/100,Descripcion del producto,153.44,568.08,public/images/cleantec-logo.png,Bolsas
+BOLSA DE ROLLO 11X14,Descripcion del producto,60.60,56.27,public/images/cleantec-logo.png,Bolsas
+BOLSA DE ROLLO 11X14,Descripcion del producto,218.70,0.00,public/images/cleantec-logo.png,Bolsas
+BOLSA DE ROLLO 6X10,Descripcion del producto,33.52,31.13,public/images/cleantec-logo.png,Bolsas
+BOLSA DE ROLLO 8X12,Descripcion del producto,39.93,37.08,public/images/cleantec-logo.png,Bolsas
+BOLSA DE ROLLO DE 60 GALONES NEGRA,Descripcion del producto,165.96,158.63,public/images/cleantec-logo.png,Bolsas
+BOLSA DE ROLLO LINEA VERDE 11X14,Descripcion del producto,227.67,0.00,public/images/cleantec-logo.png,Bolsas
+BOLSA NEGRA 12/16,Descripcion del producto,38.04,35.32,public/images/cleantec-logo.png,Bolsas
+BOLSA PARA BASURA 60GL NEGRA,Descripcion del producto,596.60,634.02,public/images/cleantec-logo.png,Bolsas
+BOLSA PARA BASURA NEGRA 33GL,Descripcion del producto,101.53,407.27,public/images/cleantec-logo.png,Bolsas
+BOTE DE PLASTICO ABIERTO O CERRADO DE 200LTS,Descripcion del producto,308.88,285.98,public/images/cleantec-logo.png,Otros
+BOTE DE PLASTICO CON TAPA,Descripcion del producto,240.50,0.00,public/images/cleantec-logo.png,Otros
+BOTE PARA BASURA NEGRO,Descripcion del producto,101.53,0.00,public/images/cleantec-logo.png,Otros
+BOTE RUBBERMAID,Descripcion del producto,"1,974.67","1,974.67",public/images/cleantec-logo.png,Otros
+BROCHES 30 PIEZAS,Descripcion del producto,40.17,37.30,public/images/cleantec-logo.png,Otros
+CAFE MOLIDO FOLGERS 1.23,Descripcion del producto,678.50,410.40,public/images/cleantec-logo.png,Alimentos
+CAJA DE PLASTICO CON TAPA GRANDE,Descripcion del producto,356.48,0.00,public/images/cleantec-logo.png,Otros
+CARRITO AMARILLO CON EXPRIMIDOR,Descripcion del producto,"1,244.38",0.00,public/images/cleantec-logo.png,Otros
+CARRITO ESTANDAR PARA EL ASEO,Descripcion del producto,"1,503.36",0.00,public/images/cleantec-logo.png,Otros
+CEPILLO CERDA SUAVE GRIS 24,Descripcion del producto,310.85,306.06,public/images/cleantec-logo.png,Limpieza
+CEPILLO HD9 CALI,Descripcion del producto,186.18,0.00,public/images/cleantec-logo.png,Limpieza
+CEPILLO LAVA CARRO COMPLETO,Descripcion del producto,146.97,136.47,public/images/cleantec-logo.png,Limpieza
+"CEPILLO NEGRO SEMIDURO ""18""",Descripcion del producto,277.60,257.77,public/images/cleantec-logo.png,Limpieza
+CEPILLO PARA LLANTAS HD9,Descripcion del producto,22.86,21.22,public/images/cleantec-logo.png,Limpieza
+CEPILLO SANITARIO CON TAZON,Descripcion del producto,39.24,36.39,public/images/cleantec-logo.png,Limpieza
+CEPILLO TIPO PLANCHA,Descripcion del producto,17.96,16.38,public/images/cleantec-logo.png,Limpieza
+CERA PARA MUEBLES LEMON FURNITURE,Descripcion del producto,45.36,0.00,public/images/cleantec-logo.png,Otros
+CESTO PARA BASURA,Descripcion del producto,191.14,0.00,public/images/cleantec-logo.png,Otros
+CHAROLA 6X6 500 PIEZAS,Descripcion del producto,491.40,0.00,public/images/cleantec-logo.png,Otros
+CHAROLA 8X8 BLANCA,Descripcion del producto,203.58,0.00,public/images/cleantec-logo.png,Otros
+CHAROLA DE PLASTICO NEGRA,Descripcion del producto,673.92,0.00,public/images/cleantec-logo.png,Otros
+CHAROLA TERMICA #066,Descripcion del producto,220.00,203.04,public/images/cleantec-logo.png,Otros
+CHAROLA TERMICA 855,Descripcion del producto,31.03,297.00,public/images/cleantec-logo.png,Otros
+CONGA 41 LITROS,Descripcion del producto,401.76,0.00,public/images/cleantec-logo.png,Otros
+CONGA DE 40 LITROS CON TAPA,Descripcion del producto,249.75,0.00,public/images/cleantec-logo.png,Otros
+CONGA DE 55 GALONES,Descripcion del producto,484.27,0.00,public/images/cleantec-logo.png,Otros
+COTONELLE SOOM,Descripcion del producto,498.15,0.00,public/images/cleantec-logo.png,Papel
+CREMA COFFE MATTE,Descripcion del producto,204.83,0.00,public/images/cleantec-logo.png,Alimentos
+CUBETA BLANCA CUADRADA,Descripcion del producto,35.21,0.00,public/images/cleantec-logo.png,Limpieza
+CUBETA FLEXIBLE #10,Descripcion del producto,71.85,66.71,public/images/cleantec-logo.png,Limpieza
+CUBETA FLEXIBLE #16,Descripcion del producto,112.67,104.62,public/images/cleantec-logo.png,Limpieza
+CUBETA FLEXIBLE #8,Descripcion del producto,37.56,35.55,public/images/cleantec-logo.png,Limpieza
+CUBRE BOCA TRICAPA,Descripcion del producto,54.14,52.50,public/images/cleantec-logo.png,Equipos de protección
+CUCHARA CAFETERA,Descripcion del producto,16.17,15.55,public/images/cleantec-logo.png,Otros
+CUCHARA PRIME LINE PAQUETE CON 100,Descripcion del producto,177.61,197.64,public/images/cleantec-logo.png,Otros
+DESENGRASANTE AWESOME 128OZ,Descripcion del producto,125.43,0.00,public/images/cleantec-logo.png,Limpieza
+DESENGRASANTE CAFE INDUSTRIAL 1LTS,Descripcion del producto,60.48,0.00,public/images/cleantec-logo.png,Limpieza
+DESENGRASANTE CONCENTRADO,Descripcion del producto,953.04,0.00,public/images/cleantec-logo.png,Limpieza
+DESENGRASANTE CONCENTRADO GALON HEAVY DUTY,Descripcion del producto,129.47,0.00,public/images/cleantec-logo.png,Limpieza
+DESENGRASANTE CONCENTRADO MM 10L,Descripcion del producto,357.75,297.90,public/images/cleantec-logo.png,Limpieza
+DESENGRASANTE MULTIUSOS REAL CELAN 10 LT,Descripcion del producto,369.70,343.29,public/images/cleantec-logo.png,Limpieza
+DESENGRASANTE POWEROSO 946ML,Descripcion del producto,34.88,33.53,public/images/cleantec-logo.png,Limpieza
+DESENGRASANTE QUICK POWER 1LTS,Descripcion del producto,45.36,0.00,public/images/cleantec-logo.png,Limpieza
+DESENGRASANTE REAL CLEAN 20LTS,Descripcion del producto,939.60,0.00,public/images/cleantec-logo.png,Limpieza
+DESPACAHDOR DE HIGIENICO JR,Descripcion del producto,326.59,0.00,public/images/cleantec-logo.png,Otros
+DESPACHADOR PARA TOALLA INTERDOBLADA,Descripcion del producto,331.70,0.00,public/images/cleantec-logo.png,Otros
+DESPACAÑOS PALMA,Descripcion del producto,34.29,31.84,public/images/cleantec-logo.png,Limpieza
+DETERGENTE ACE,Descripcion del producto,393.86,365.72,public/images/cleantec-logo.png,Detergente
+DETERGENTE ARIEL 500GR,Descripcion del producto,26.24,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE DOWNY,Descripcion del producto,370.12,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE DOWNY BOTANICALS FRUITY,Descripcion del producto,306.18,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE DOWNY CONCENTRADO,Descripcion del producto,352.18,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE EN POLVO ARCOIRIS 9KG,Descripcion del producto,289.48,342.36,public/images/cleantec-logo.png,Detergente
+DETERGENTE EN POLVO FOCA 250GR,Descripcion del producto,12.00,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE EN POLVO FOCA 500G,Descripcion del producto,22.41,21.64,public/images/cleantec-logo.png,Detergente
+DETERGENTE EN POLVO GREAT VALUE 5KG,Descripcion del producto,120.96,112.32,public/images/cleantec-logo.png,Detergente
+DETERGENTE EN POLVO MAESTRO LIMPIO,Descripcion del producto,362.60,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE EN POLVO ROMA 10KG,Descripcion del producto,427.04,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE EN POLVO ROMA 1KG,Descripcion del producto,55.76,51.78,public/images/cleantec-logo.png,Detergente
+DETERGENTE EN POLVO BLANCA NIEVES 1KG,Descripcion del producto,42.40,41.75,public/images/cleantec-logo.png,Detergente
+DETERGENTE FOCA 1KG,Descripcion del producto,42.48,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE LIQUIDO CARISMA 500ML,Descripcion del producto,18.52,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE LIQUIDO ARCOIRIS 1L,Descripcion del producto,31.32,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE LIQUIDO ACROIRIS PARA TODO TIPO DE ROPA,Descripcion del producto,28.43,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE LIQUIDO ARCOIRIS ROPA OSCURA,Descripcion del producto,25.22,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE LIQUIDO ARIEL 8.5LT,Descripcion del producto,448.77,432.15,public/images/cleantec-logo.png,Detergente
+DETERGENTE LIQUIDO BLANCA NIEVES,Descripcion del producto,18.52,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE LIQUIDO CARISMA,Descripcion del producto,42.12,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE LIQUIDO COLOR Y BLANCOS,Descripcion del producto,320.85,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE LIQUIDO FOCA 1LT,Descripcion del producto,47.39,44.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE LIQUIDO FOCA 3.75,Descripcion del producto,147.80,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE LIQUIDO FOCA 500ML,Descripcion del producto,18.52,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE LIQUIDO FOCA 8LTS,Descripcion del producto,369.07,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE LIQUIDO MAS COLOR BCO 9L,Descripcion del producto,397.25,382.53,public/images/cleantec-logo.png,Detergente
+DETERGENTE LIQUIDO ROMA,Descripcion del producto,18.52,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE LIQUIDO ROMA 1LITRO,Descripcion del producto,42.58,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE ROPA DE COLOR MM 20L,Descripcion del producto,614.95,0.00,public/images/cleantec-logo.png,Detergente
+DETERGENTE SUAVITEL COMPLETE 8.5LT,Descripcion del producto,361.35,335.53,public/images/cleantec-logo.png,Detergente
+DISPENSADOR DE TOALLA,Descripcion del producto,476.93,0.00,public/images/cleantec-logo.png,Otros
+ELIMINADOR DE OLORES ODOBAN,Descripcion del producto,212.42,0.00,public/images/cleantec-logo.png,Limpieza
+ENCENDEDOR BIC 15 PIEZAS,Descripcion del producto,20.21,0.00,public/images/cleantec-logo.png,Otros
+ENDULZANTE ESPLENDA 600 PIEZAS,Descripcion del producto,356.65,0.00,public/images/cleantec-logo.png,Alimentos
+ENSUEÑO 9LT,Descripcion del producto,339.85,335.11,public/images/cleantec-logo.png,Suavizante
+ENSUEÑO FRESCURA AZUL 740ML,Descripcion del producto,28.47,0.00,public/images/cleantec-logo.png,Suavizante
+ENSUEÑO ULTRA 740ML FRESCO VERANO,Descripcion del producto,28.47,0.00,public/images/cleantec-logo.png,Suavizante
+ESCOBA MARIEL MEDIANA,Descripcion del producto,41.97,41.97,public/images/cleantec-logo.png,Limpieza
+ESPONJA LAVA TRASTES SCOTH BRITE,Descripcion del producto,25.27,0.00,public/images/cleantec-logo.png,Limpieza
+ESPONJA MULTIUSOS CLOROX,Descripcion del producto,15.88,0.00,public/images/cleantec-logo.png,Limpieza
+ESPONJA MULTIUSOS COLORES,Descripcion del producto,17.96,16.68,public/images/cleantec-logo.png,Limpieza
+ESTROPAJO GALVANIZADO CHICO,Descripcion del producto,7.83,7.27,public/images/cleantec-logo.png,Limpieza
+ESTROPAJO GALVANIZADO GRANDE,Descripcion del producto,11.91,11.06,public/images/cleantec-logo.png,Limpieza
+FABULOSO BRISA PRIMAVERAL 2L,Descripcion del producto,54.00,0.00,public/images/cleantec-logo.png,Limpieza
+FABULOSO COLECCION ZEN 10L,Descripcion del producto,308.88,0.00,public/images/cleantec-logo.png,Limpieza
+FABULOSO MAR FRESCO 12,Descripcion del producto,35.71,0.00,public/images/cleantec-logo.png,Limpieza
+FIBRA ESPIRAL,Descripcion del producto,4.81,4.17,public/images/cleantec-logo.png,Limpieza
+FIBRA ESPIRAL GR50,Descripcion del producto,17.63,16.36,public/images/cleantec-logo.png,Limpieza
+FIBRA ESPONJA CLOROX,Descripcion del producto,20.67,20.36,public/images/cleantec-logo.png,Limpieza
+FIBRA VERDE CON ESPONJA,Descripcion del producto,7.67,7.12,public/images/cleantec-logo.png,Limpieza
+FIBRA VERDE SCOTCH BRITE P96,Descripcion del producto,20.70,0.00,public/images/cleantec-logo.png,Limpieza
+FILMICO 5 PULGADOS,Descripcion del producto,87.07,0.00,public/images/cleantec-logo.png,Otros
+"FLEJE ANCHO 5""60",Descripcion del producto,120.46,0.00,public/images/cleantec-logo.png,Otros
+FOCA LIQUIDO 4.3 LITROS,Descripcion del producto,152.89,0.00,public/images/cleantec-logo.png,Detergente
+GARRAFA DE JABON PARA MANOS,Descripcion del producto,287.57,0.00,public/images/cleantec-logo.png,Limpieza
+GATORADE LIMA LIMON 2.168,Descripcion del producto,465.29,0.00,public/images/cleantec-logo.png,Alimentos
+GATORADE SABOR NARANJA 2.38KG,Descripcion del producto,423.52,0.00,public/images/cleantec-logo.png,Alimentos
+GRILL & OVEN AWESOME,Descripcion del producto,47.25,0.00,public/images/cleantec-logo.png,Otros
+GUANTE DE LATEX 100 PIEZAS,Descripcion del producto,89.94,89.33,public/images/cleantec-logo.png,Equipos de protección
+GUANTE DE NITRILE,Descripcion del producto,119.09,117.24,public/images/cleantec-logo.png,Equipos de protección
+GUANTE DE NITRILL TALLA L,Descripcion del producto,155.25,0.00,public/images/cleantec-logo.png,Equipos de protección
+GUANTE DOMESTICO L,Descripcion del producto,27.08,27.29,public/images/cleantec-logo.png,Equipos de protección
+GUANTE DOMESTICO LILA,Descripcion del producto,36.63,0.00,public/images/cleantec-logo.png,Equipos de protección
+GUANTE DOMESTICO M,Descripcion del producto,27.70,28.80,public/images/cleantec-logo.png,Equipos de protección
+GUANTE DOMESTICO TALLA S,Descripcion del producto,29.39,27.29,public/images/cleantec-logo.png,Equipos de protección
+GUANTE DOMESTICO XL,Descripcion del producto,27.08,27.29,public/images/cleantec-logo.png,Equipos de protección
+HAND SOAP JABON LIQUIDO PARA MANOS,Descripcion del producto,179.33,172.69,public/images/cleantec-logo.png,Limpieza
+HARPIC 750ML,Descripcion del producto,61.51,56.30,public/images/cleantec-logo.png,Limpieza
+JABON AXION 1.1L AVENA VITAMINA,Descripcion del producto,66.15,0.00,public/images/cleantec-logo.png,Limpieza
+JABON AXION 1.1L SWEET MELON,Descripcion del producto,66.15,0.00,public/images/cleantec-logo.png,Limpieza
+JABON DAWN 3.78L,Descripcion del producto,440.72,0.00,public/images/cleantec-logo.png,Limpieza
+JABON LIQUIDO AXION 2.8 TRICLORO,Descripcion del producto,168.83,166.23,public/images/cleantec-logo.png,Limpieza
+JABON LIQUIDO AXION 400ML,Descripcion del producto,20.93,19.43,public/images/cleantec-logo.png,Limpieza
+JABON LIQUIDO AXION LIMON 2.8,Descripcion del producto,169.83,160.96,public/images/cleantec-logo.png,Limpieza
+JABON LIQUIDO PARA MANOS BEAUTY SOFT 2L,Descripcion del producto,92.66,0.00,public/images/cleantec-logo.png,Limpieza
+JABON LIQUIDO PARA MANOS DIFERENTES AROMAS,Descripcion del producto,69.39,64.42,public/images/cleantec-logo.png,Limpieza
+JABON LIQUIDO PARA TRASTES DAWN 2.6,Descripcion del producto,262.42,252.73,public/images/cleantec-logo.png,Limpieza
+JABON LIQUIDO PARA TRASTES KIRKLAND 2.66L,Descripcion del producto,263.84,0.00,public/images/cleantec-logo.png,Limpieza
+JABON LIQUIDO PARA SALVO 2.6L,Descripcion del producto,184.81,0.00,public/images/cleantec-logo.png,Limpieza
+JABON ZOTE 200GRS,Descripcion del producto,15.01,0.00,public/images/cleantec-logo.png,Limpieza
+JABON ZOTE 400GRS,Descripcion del producto,29.82,0.00,public/images/cleantec-logo.png,Limpieza
+JABONERA,Descripcion del producto,377.14,0.00,public/images/cleantec-logo.png,Limpieza
+JABONERA CALI 1L,Descripcion del producto,267.90,0.00,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR FLASH BRISA MARINA 1L,Descripcion del producto,22.30,20.41,public/images/cleantec-logo.png,Limpieza
+LIMPIA VIDRIOS PARA CARRO,Descripcion del producto,65.32,60.65,public/images/cleantec-logo.png,Limpieza
+LIMPIA VIDRIOS POWEROSO 946ML,Descripcion del producto,37.44,35.67,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR FABULOSO MAR FRESCO 2L,Descripcion del producto,54.00,0.00,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR BRISA MARINA MM 10 LTS,Descripcion del producto,200.15,0.00,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR CLEAN TEC 1 LITRO,Descripcion del producto,13.24,0.00,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR FABULOSO 2L LAVANDA,Descripcion del producto,54.00,0.00,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR FABULOSO DE 10 LTS,Descripcion del producto,279.45,398.12,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR FABULOSO JAMAICA MANDARINA,Descripcion del producto,327.40,303.48,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR FABULOSO MENTA 10LT,Descripcion del producto,353.75,353.74,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR FABULOSO VARIOS AROMAS,Descripcion del producto,30.10,0.00,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR FLASH BRISA MARINA,Descripcion del producto,21.98,20.41,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR FLASH FLORAL 1L,Descripcion del producto,21.01,19.23,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR FLASH LAVANDA 1.25,Descripcion del producto,26.37,26.29,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR FLASH LAVANDA 1L,Descripcion del producto,22.30,20.41,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR LYSOL 5L,Descripcion del producto,184.68,0.00,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR MM 10 LTS CITRUS,Descripcion del producto,189.06,175.55,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR MM LAVANDA 10LT,Descripcion del producto,244.38,226.80,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR MM LAVANDA 20 LTS,Descripcion del producto,371.90,340.20,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR MM MANZANA CANELA 10LT,Descripcion del producto,189.06,175.55,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR MULTIUSOS MAESTRO LIMPIO VARIOS AROMAS,Descripcion del producto,256.35,0.00,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR PINOL 1LT,Descripcion del producto,32.60,30.61,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR PINOL EL ORIGINAL 9LT,Descripcion del producto,292.90,263.73,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR PINOL 3.75ML,Descripcion del producto,123.52,118.69,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR PINOL FLORAL,Descripcion del producto,260.02,241.44,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR PINOL REPELENTE 9LT,Descripcion del producto,260.02,240.58,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR POETT 9L ALEGRA TU VIDA,Descripcion del producto,177.19,0.00,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR POETT ALEGRA TU VIDA,Descripcion del producto,20.71,19.23,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR POETT DE LAVANDA,Descripcion del producto,20.71,19.23,public/images/cleantec-logo.png,Limpieza
+LIMPIADOR POETT SUAVIDAD DE ALGODON,Descripcion del producto,20.71,19.23,public/images/cleantec-logo.png,Limpieza
+LYSOL AEROSOL DESINFECTANTE 354G,Descripcion del producto,121.01,121.00,public/images/cleantec-logo.png,Limpieza
+LYSOL AEROSOL DESINFECTANTE 475G,Descripcion del producto,150.76,122.50,public/images/cleantec-logo.png,Limpieza
+LYSOL LIMPIADOR 6LTS,Descripcion del producto,201.94,184.87,public/images/cleantec-logo.png,Limpieza
+LYSOL QUITA SARRO,Descripcion del producto,59.93,0.00,public/images/cleantec-logo.png,Limpieza
+LYSOL WIPES DESINFECTANTES,Descripcion del producto,133.83,122.49,public/images/cleantec-logo.png,Limpieza
+LYSOL WIPES DESINFECTANTES LEMON,Descripcion del producto,133.83,122.49,public/images/cleantec-logo.png,Limpieza
+MAGITELES EN ROLLO,Descripcion del producto,47.25,0.00,public/images/cleantec-logo.png,Limpieza
+MANGO DE MADERA CON HERRAJE DE PLASTICO,Descripcion del producto,139.22,130.40,public/images/cleantec-logo.png,Otros
+"MANGO PUNTA DE METAL ""54",Descripcion del producto,59.14,58.22,public/images/cleantec-logo.png,Otros
+MAS COLOR 4.8L,Descripcion del producto,196.26,0.00,public/images/cleantec-logo.png,Detergente
+MAS COLOR PERFUME Y RENOVACION,Descripcion del producto,432.25,0.00,public/images/cleantec-logo.png,Detergente
+MAS OSCURA 4.8L,Descripcion del producto,197.94,0.00,public/images/cleantec-logo.png,Detergente
+MAS OSCURA 9L,Descripcion del producto,443.39,0.00,public/images/cleantec-logo.png,Detergente
+MR CLEAN MAGIC ERASER,Descripcion del producto,292.48,0.00,public/images/cleantec-logo.png,Detergente
+OXI CLEAN QUITA MANCHAS,Descripcion del producto,191.81,0.00,public/images/cleantec-logo.png,Detergente
+PAÑALES PARA PERRO,Descripcion del producto,495.00,0.00,public/images/cleantec-logo.png,Otros
+PAPEL COTONELLE SOFT,Descripcion del producto,446.04,0.00,public/images/cleantec-logo.png,Papel
+PAPEL COTTONELLE 30 ROLLOS,Descripcion del producto,225.45,0.00,public/images/cleantec-logo.png,Papel
+PAPEL COTTONELLE BLOSOOM 32,Descripcion del producto,404.46,0.00,public/images/cleantec-logo.png,Papel
+PAPEL HIGIENICO DALIA 180,Descripcion del producto,37.31,36.23,public/images/cleantec-logo.png,Papel
+PAPEL HIGIENICO DALIA 360,Descripcion del producto,72.62,66.98,public/images/cleantec-logo.png,Papel
+PAPEL HIGIENICO JR KC C/12 200MTS,Descripcion del producto,36.03,33.42,public/images/cleantec-logo.png,Papel
+PAPEL HIGIENICO JUMBO C/6,Descripcion del producto,69.28,63.18,public/images/cleantec-logo.png,Papel
+PAPEL HIGIENICO KIRKLAND,Descripcion del producto,112.32,0.00,public/images/cleantec-logo.png,Papel
+PAPEL HIGIENICO PETALO C/40,Descripcion del producto,375.58,299.41,public/images/cleantec-logo.png,Papel
+PAPEL HIGIENICO QUALITY,Descripcion del producto,9.76,9.04,public/images/cleantec-logo.png,Papel
+PAPEL HIGIENICO QUALITY 400 HD 12/4,Descripcion del producto,38.77,36.00,public/images/cleantec-logo.png,Papel
+PAPEL HIGIENICO QUALITY 600 HD 12/4,Descripcion del producto,53.62,49.78,public/images/cleantec-logo.png,Papel
+PASTILLA WIESE,Descripcion del producto,13.33,9.80,public/images/cleantec-logo.png,Limpieza
+PASTILLAS HARPIC 16,Descripcion del producto,277.60,265.36,public/images/cleantec-logo.png,Limpieza
+PASTILLAS PATO 1/6,Descripcion del producto,151.63,0.00,public/images/cleantec-logo.png,Limpieza
+PERLAS DOWNY PARADISE,Descripcion del producto,367.50,0.00,public/images/cleantec-logo.png,Suavizante
+PERLAS PARA ROPA DOWNY 141G,Descripcion del producto,104.98,0.00,public/images/cleantec-logo.png,Suavizante
+PIEDRA PARA PLANCHA GRILL,Descripcion del producto,72.00,0.00,public/images/cleantec-logo.png,Otros
+PILAS DURACELL,Descripcion del producto,622.24,0.00,public/images/cleantec-logo.png,Otros
+PLATO POZOLERO 20/25,Descripcion del producto,25.45,0.00,public/images/cleantec-logo.png,Alimentos
+PLATO POZOLERO C/500 PIEZAS,Descripcion del producto,447.12,0.00,public/images/cleantec-logo.png,Alimentos
+PLATO REYMA CON DIVI/ SIN DIV,Descripcion del producto,551.30,0.00,public/images/cleantec-logo.png,Alimentos
+PLEDGE LEMON 403G,Descripcion del producto,101.09,84.20,public/images/cleantec-logo.png,Limpieza
+PLUMERO DE AVESTRUZ CHICO,Descripcion del producto,246.58,228.96,public/images/cleantec-logo.png,Limpieza
+POLIFIBRAS MEXICANAS,Descripcion del producto,8.70,0.00,public/images/cleantec-logo.png,Limpieza
+POPOTE ESTUCHADO,Descripcion del producto,84.24,0.00,public/images/cleantec-logo.png,Alimentos
+POWER HOUSE FURNITURE POLISH,Descripcion del producto,45.36,0.00,public/images/cleantec-logo.png,Limpieza
+QUICK POWER 20LTS,Descripcion del producto,810.00,0.00,public/images/cleantec-logo.png,Otros
+RECOGEDOR DE LAMINA CHICO,Descripcion del producto,45.72,46.33,public/images/cleantec-logo.png,Limpieza
+RECOGEDOR DE LAMINA GRANDE,Descripcion del producto,57.46,53.35,public/images/cleantec-logo.png,Limpieza
+RECOGEDOR DE LAMINA MEDIANO,Descripcion del producto,57.15,53.07,public/images/cleantec-logo.png,Limpieza
+REFUERZO PARA CEPILLO,Descripcion del producto,60.42,56.10,public/images/cleantec-logo.png,Otros
+REPUESTO PARA MOP 40 BLANCO,Descripcion del producto,39.19,36.39,public/images/cleantec-logo.png,Otros
+REPUESTO PARA MOP 60CM AZUL,Descripcion del producto,84.91,78.84,public/images/cleantec-logo.png,Otros
+REPUESTO PARA MOP AZUL 40CM,Descripcion del producto,63.50,58.97,public/images/cleantec-logo.png,Otros
+REPUESTO PARA MOP AZUL 90CM,Descripcion del producto,112.67,100.07,public/images/cleantec-logo.png,Otros
+REPUESTO PARA TRAPEADOR ALGODON 40,Descripcion del producto,45.36,42.12,public/images/cleantec-logo.png,Otros
+REPUESTO PARA TRAPEADOR AZUL,Descripcion del producto,62.73,58.24,public/images/cleantec-logo.png,Otros
+RESMA DE HOJA BLANCAS,Descripcion del producto,189.00,0.00,public/images/cleantec-logo.png,Otros
+SANITAS TOALLA INTERDOBLADA 20,Descripcion del producto,19.60,18.19,public/images/cleantec-logo.png,Papel
+SCRUB FREE OXI CLEAN,Descripcion del producto,45.36,0.00,public/images/cleantec-logo.png,Limpieza
+SERVILLETA KLENEX 300 PIEZAS,Descripcion del producto,51.52,0.00,public/images/cleantec-logo.png,Papel
+SERVILLETA RESTAURANT 1/500,Descripcion del producto,50.91,40.50,public/images/cleantec-logo.png,Papel
+SERVILLETAS 4/260 KIRKLAND SIGNATURE,Descripcion del producto,333.99,321.33,public/images/cleantec-logo.png,Papel
+SERVITOALLA INTERDOBLADA PETALO 24/250,Descripcion del producto,22.65,21.03,public/images/cleantec-logo.png,Papel
+SHAMPOO PARA CARROS 1LT,Descripcion del producto,41.28,0.00,public/images/cleantec-logo.png,Para Autos
+SHAMPOO PLUS AUTOMOTRIZ,Descripcion del producto,37.80,0.00,public/images/cleantec-logo.png,Para Autos
+SUAVIZANTE ENSUEÑO 12/850,Descripcion del producto,23.95,0.00,public/images/cleantec-logo.png,Suavizante
+SUAVIZANTE ENSUEÑO 9L,Descripcion del producto,328.92,0.00,public/images/cleantec-logo.png,Suavizante
+SUAVITEL FRESCA PRIMAVERA 8.5,Descripcion del producto,360.14,334.41,public/images/cleantec-logo.png,Suavizante
+SUAVITEL FRESCO AROMA DE SOL,Descripcion del producto,102.38,0.00,public/images/cleantec-logo.png,Suavizante
+SUAVITEL LILA 8.5L,Descripcion del producto,351.00,0.00,public/images/cleantec-logo.png,Suavizante
+SUAVITEL MM ABRAZO DE AMOR 2.8L,Descripcion del producto,119.23,0.00,public/images/cleantec-logo.png,Suavizante
+SUAVITEL MM CARICIA IRRESISTIBLE,Descripcion del producto,119.23,0.00,public/images/cleantec-logo.png,Suavizante
+SUAVITEL UNIQUED TOUCH,Descripcion del producto,386.71,0.00,public/images/cleantec-logo.png,Suavizante
+SUAVIZANTE DE TELAS CARISMA 500ML,Descripcion del producto,18.52,0.00,public/images/cleantec-logo.png,Suavizante
+SUAVIZANTE ENSUEÑO 2.8L,Descripcion del producto,81.65,0.00,public/images/cleantec-logo.png,Suavizante
+SUAVIZANTE MM 20L,Descripcion del producto,513.76,0.00,public/images/cleantec-logo.png,Suavizante
+SUAVIZANTE SUAVITEL BABY 3L,Descripcion del producto,102.38,0.00,public/images/cleantec-logo.png,Suavizante
+SUAVIZANTE SUAVITEL MANZANA 3L,Descripcion del producto,102.38,0.00,public/images/cleantec-logo.png,Suavizante
+SUERO ELECTROLIT 12/625,Descripcion del producto,234.76,0.00,public/images/cleantec-logo.png,Alimentos
+SUPER TELA MAGITEL,Descripcion del producto,7.02,7.12,public/images/cleantec-logo.png,Limpieza
+TAPA CON RANURA DART,Descripcion del producto,78.86,0.00,public/images/cleantec-logo.png,Alimentos
+TAPA DE 2OZ,Descripcion del producto,607.66,0.00,public/images/cleantec-logo.png,Alimentos
+TAPA PARA VASO 24EU,Descripcion del producto,693.66,0.00,public/images/cleantec-logo.png,Alimentos
+TAPETE LISTO PARA MIGITORIO,Descripcion del producto,30.06,27.52,public/images/cleantec-logo.png,Otros
+TAPETE PARA MIGITORIO,Descripcion del producto,14.26,0.00,public/images/cleantec-logo.png,Otros
+TENEDOR MEDIANO PAQUETE CON 100,Descripcion del producto,16.12,15.50,public/images/cleantec-logo.png,Alimentos
+TOALLA DE COCINA ADORABLE C/50 HD C/24,Descripcion del producto,18.01,16.72,public/images/cleantec-logo.png,Papel
+TOALLA DE MICROFIBRA AZUL,Descripcion del producto,12.96,0.00,public/images/cleantec-logo.png,Papel
+TOALLA DE MICROFIBRA KIRKLAND,Descripcion del producto,14.67,13.62,public/images/cleantec-logo.png,Papel
+TOALLA DE ROLLO BCO C/12,Descripcion del producto,50.39,46.79,public/images/cleantec-logo.png,Papel
+TOALLA DE ROLLO BCOTR350,Descripcion del producto,61.14,52.53,public/images/cleantec-logo.png,Papel
+TOALLA DE ROLLO CAFE C/12,Descripcion del producto,50.35,46.75,public/images/cleantec-logo.png,Papel
+TOALLA DE ROLLO CAFE C350,Descripcion del producto,56.33,52.06,public/images/cleantec-logo.png,Papel
+TOALLA DE ROLLO CAFE K160,Descripcion del producto,71.03,65.96,public/images/cleantec-logo.png,Papel
+TOALLA DE ROLLO KIRKLAND,Descripcion del producto,59.09,54.86,public/images/cleantec-logo.png,Papel
+TOALLA DE ROLLO PARA COCINA REGIO,Descripcion del producto,38.68,0.00,public/images/cleantec-logo.png,Papel
+TOALLA DE ROLLO SCOTT,Descripcion del producto,57.86,51.72,public/images/cleantec-logo.png,Papel
+TOALLA INTERDOBLADA C250,Descripcion del producto,40.32,37.26,public/images/cleantec-logo.png,Papel
+TOALLA INTERDOBLADA BLANCA TI 250,Descripcion del producto,39.61,36.56,public/images/cleantec-logo.png,Papel
+TOALLA PARA SECADORA SUAVITEL,Descripcion del producto,38.88,0.00,public/images/cleantec-logo.png,Papel
+TOALLAS PARA SECADORA BOUNCE,Descripcion del producto,444.70,0.00,public/images/cleantec-logo.png,Papel
+TRAPEADOR ALGODON AMARILLO #900,Descripcion del producto,88.19,81.89,public/images/cleantec-logo.png,Limpieza
+TRAPEADOR DE ALGODON #1000 NARANJA,Descripcion del producto,101.68,94.45,public/images/cleantec-logo.png,Limpieza
+TRAPEADOR DE ALGODON ECO AZUL #500,Descripcion del producto,69.29,64.34,public/images/cleantec-logo.png,Limpieza
+TRAPEADOR DE ALGODON ROJO #700,Descripcion del producto,78.87,72.40,public/images/cleantec-logo.png,Limpieza
+TRAPEADOR DE HILAZA COLOR 450GR,Descripcion del producto,65.37,0.00,public/images/cleantec-logo.png,Limpieza
+TRAPEADOR DE MAGITEL,Descripcion del producto,32.29,0.00,public/images/cleantec-logo.png,Limpieza
+TRAPEADOR DE MICROFIBRA GRANDE,Descripcion del producto,94.04,0.00,public/images/cleantec-logo.png,Limpieza
+TRAPEADOR DE MICROFIBRA MEDIANO,Descripcion del producto,78.00,0.00,public/images/cleantec-logo.png,Limpieza
+TRATAMIENTO BASE AGUA PISO GALON,Descripcion del producto,209.95,0.00,public/images/cleantec-logo.png,Limpieza
+ULTIMATE HOME LINT ROLLE,Descripcion del producto,40.50,0.00,public/images/cleantec-logo.png,Limpieza
+VANISH BCO 9LT,Descripcion del producto,370.66,0.00,public/images/cleantec-logo.png,Detergente
+VANISH OXI ACTION 120G,Descripcion del producto,23.98,0.00,public/images/cleantec-logo.png,Detergente
+VANISH ROSA 9L,Descripcion del producto,299.05,0.00,public/images/cleantec-logo.png,Detergente
+VASO DART 16OZ,Descripcion del producto,"1,331.15",0.00,public/images/cleantec-logo.png,Alimentos
+VASO DE FOAM 32 OZ 20/15,Descripcion del producto,34.30,34.31,public/images/cleantec-logo.png,Alimentos
+VASO DE FOAM DE 10 OZ 40/25PZ,Descripcion del producto,17.98,18.69,public/images/cleantec-logo.png,Alimentos
+VASO DE PLASTICO EU 24OZ REYMA,Descripcion del producto,916.09,0.00,public/images/cleantec-logo.png,Alimentos
+VASO N.10 TERMICO REYMA 40/25 PIEZAS,Descripcion del producto,14.38,13.82,public/images/cleantec-logo.png,Alimentos
+VASO N.12 TERMICO REYMA,Descripcion del producto,14.53,13.96,public/images/cleantec-logo.png,Alimentos
+VASO REYMA #8 DE PLASTICO,Descripcion del producto,635.30,0.00,public/images/cleantec-logo.png,Alimentos
+VASO REYMA FOAM #14,Descripcion del producto,459.17,0.00,public/images/cleantec-logo.png,Alimentos
+VASO REYMA FOAM #16,Descripcion del producto,516.47,0.00,public/images/cleantec-logo.png,Alimentos
+WINDEX DE GALON,Descripcion del producto,51.84,0.00,public/images/cleantec-logo.png,Limpieza
