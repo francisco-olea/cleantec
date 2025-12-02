@@ -52,8 +52,8 @@ export function Footer() {
                 <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm font-medium">Dirección</p>
-                  <p className="text-sm text-muted-foreground">San José, Costa Rica</p>
-                  <p className="text-sm text-muted-foreground">200m norte de la Rotonda</p>
+                  <p className="text-sm text-muted-foreground">Cjon Revolución y 4ta</p>
+                  <p className="text-sm text-muted-foreground">San Luis RC, Sonora</p>
                 </div>
               </div>
             </div>

@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { useCart } from "@/components/cart-provider"
 import type { ClientInfo } from "@/lib/clients"
+import { buildFullAddress, getCompanyName } from "@/lib/clients-client"
 import { CheckCircle, Package, MapPin, User, Phone, Building, Calendar, Clock, Send, Loader2 } from "lucide-react"
 import Image from "next/image"
 
@@ -42,17 +43,17 @@ export function OrderConfirmation({ onComplete }: OrderConfirmationProps) {
       // Prepare order data
       const orderData = {
         client_number: clientInfo.clientNumber,
-        client_name: clientInfo.contactPerson,
-        client_company: clientInfo.companyName,
-        client_address: `${clientInfo.address}, ${clientInfo.city}`,
-        client_phone: clientInfo.phone,
+        client_name: clientInfo.clientName,
+        client_company: getCompanyName(clientInfo),
+        client_address: buildFullAddress(clientInfo),
+        client_phone: clientInfo.tel || "",
         subtotal: state.total,
         iva: state.total * 0.16,
         total: state.total * 1.16,
         items: state.items.map((item) => ({
           product_id: item.id,
           product_name: item.name,
-          product_sku: item.sku || null,
+          product_sku: (item as any).sku || null,
           quantity: item.quantity,
           unit_price: item.price,
           total_price: item.price * item.quantity,
@@ -211,26 +212,32 @@ export function OrderConfirmation({ onComplete }: OrderConfirmationProps) {
                 <div className="flex items-start gap-2">
                   <User className="h-4 w-4 mt-0.5 text-muted-foreground" />
                   <div>
-                    <p className="font-medium">{clientInfo.companyName}</p>
+                    <p className="font-medium">{getCompanyName(clientInfo)}</p>
                     <p className="text-sm text-muted-foreground">Cliente: {clientInfo.clientNumber}</p>
+                    {clientInfo.RFC && (
+                      <p className="text-xs text-muted-foreground">RFC: {clientInfo.RFC}</p>
+                    )}
                   </div>
                 </div>
 
                 <div className="flex items-start gap-2">
                   <MapPin className="h-4 w-4 mt-0.5 text-muted-foreground" />
                   <div>
-                    <p className="text-sm">{clientInfo.address}</p>
-                    <p className="text-sm text-muted-foreground">{clientInfo.city}</p>
+                    <p className="text-sm">{buildFullAddress(clientInfo)}</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2">
-                  <Phone className="h-4 w-4 text-muted-foreground" />
-                  <div>
-                    <p className="text-sm">{clientInfo.contactPerson}</p>
-                    <p className="text-sm text-muted-foreground">{clientInfo.phone}</p>
+                {(clientInfo.tel || clientInfo.correo) && (
+                  <div className="flex items-center gap-2">
+                    <Phone className="h-4 w-4 text-muted-foreground" />
+                    <div>
+                      {clientInfo.tel && <p className="text-sm">{clientInfo.tel}</p>}
+                      {clientInfo.correo && (
+                        <p className="text-sm text-muted-foreground">{clientInfo.correo}</p>
+                      )}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </CardContent>
           </Card>

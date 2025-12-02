@@ -1,3 +1,4 @@
+import 'server-only';
 import Database from "better-sqlite3"
 import path from "path"
 import fs from "fs"
@@ -224,42 +225,82 @@ function initializeDatabase(database: Database.Database) {
     console.log("[v0] Orders schema created successfully")
   }
 
-  // Migrate existing products table if unit column exists (run after table creation check)
+  // Check if customers table exists
+  const customersTableExists = database
+    .prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='customers'")
+    .get()
+
+  if (!customersTableExists) {
+    console.log("[v0] Initializing customers schema...")
+
+    database.exec(`
+      CREATE TABLE IF NOT EXISTS customers (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        client_number TEXT UNIQUE NOT NULL,
+        client_name TEXT NOT NULL,
+        RFC TEXT,
+        direccion TEXT,
+        colonia TEXT,
+        ciudad TEXT,
+        estado TEXT,
+        cp TEXT,
+        correo TEXT,
+        tel TEXT,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      );
+
+      CREATE INDEX IF NOT EXISTS idx_customers_client_number ON customers(client_number);
+    `)
+
+    console.log("[v0] Customers schema created successfully")
+  }
+
+  // Migrate existing products table if needed (run after table creation check)
   if (productsTableExists !== undefined) {
     try {
       const tableInfo = database.prepare("PRAGMA table_info(products)").all() as Array<{ name: string }>
       const hasUnit = tableInfo.some((col) => col.name === "unit")
       const hasPrice2 = tableInfo.some((col) => col.name === "price2")
       
-      if (hasUnit && !hasPrice2) {
-        console.log("[v0] Migrating products table: removing unit, adding price2...")
-        database.exec(`
-          CREATE TABLE products_new (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT NOT NULL,
-            description TEXT NOT NULL,
-            price REAL NOT NULL,
-            price2 REAL DEFAULT 0,
-            category TEXT NOT NULL,
-            image_url TEXT NOT NULL,
-            stock INTEGER DEFAULT 0,
-            active INTEGER DEFAULT 1,
-            sku TEXT,
-            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-            updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
-          );
-          
-          INSERT INTO products_new (id, name, description, price, price2, category, image_url, stock, active, sku, created_at, updated_at)
-          SELECT id, name, description, price, 0 as price2, category, image_url, stock, active, COALESCE(sku, NULL) as sku, created_at, updated_at
-          FROM products;
-          
-          DROP TABLE products;
-          ALTER TABLE products_new RENAME TO products;
-          
-          CREATE INDEX IF NOT EXISTS idx_products_category ON products(category);
-          CREATE INDEX IF NOT EXISTS idx_products_active ON products(active);
-          CREATE INDEX IF NOT EXISTS idx_products_sku ON products(sku);
-        `)
+      // Add price2 column if it doesn't exist
+      if (!hasPrice2) {
+        console.log("[v0] Migrating products table: adding price2 column...")
+        
+        if (hasUnit) {
+          // Full migration: remove unit, add price2
+          database.exec(`
+            CREATE TABLE products_new (
+              id INTEGER PRIMARY KEY AUTOINCREMENT,
+              name TEXT NOT NULL,
+              description TEXT NOT NULL,
+              price REAL NOT NULL,
+              price2 REAL DEFAULT 0,
+              category TEXT NOT NULL,
+              image_url TEXT NOT NULL,
+              stock INTEGER DEFAULT 0,
+              active INTEGER DEFAULT 1,
+              sku TEXT,
+              created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+              updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+            );
+            
+            INSERT INTO products_new (id, name, description, price, price2, category, image_url, stock, active, sku, created_at, updated_at)
+            SELECT id, name, description, price, 0 as price2, category, image_url, stock, active, COALESCE(sku, NULL) as sku, created_at, updated_at
+            FROM products;
+            
+            DROP TABLE products;
+            ALTER TABLE products_new RENAME TO products;
+            
+            CREATE INDEX IF NOT EXISTS idx_products_category ON products(category);
+            CREATE INDEX IF NOT EXISTS idx_products_active ON products(active);
+            CREATE INDEX IF NOT EXISTS idx_products_sku ON products(sku);
+          `)
+        } else {
+          // Simple migration: just add price2 column
+          database.exec(`
+            ALTER TABLE products ADD COLUMN price2 REAL DEFAULT 0;
+          `)
+        }
         console.log("[v0] Migration completed successfully")
       }
     } catch (error) {

@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { validateClientNumber, type ClientInfo } from "@/lib/clients"
+import type { ClientInfo } from "@/lib/clients"
+import { buildFullAddress, getCompanyName } from "@/lib/clients-client"
 import { ArrowLeft, ArrowRight, User, MapPin, Phone, Building, AlertCircle, CheckCircle } from "lucide-react"
 
 interface ClientValidationProps {
@@ -29,20 +30,24 @@ export function ClientValidation({ onBack, onContinue }: ClientValidationProps) 
     setIsValidating(true)
     setError("")
 
-    // Simulate API call delay
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    try {
+      const response = await fetch(`/api/clients?clientNumber=${encodeURIComponent(clientNumber.trim())}`)
+      const result = await response.json()
 
-    const client = validateClientNumber(clientNumber.trim())
-
-    if (client) {
-      setClientInfo(client)
-      setError("")
-    } else {
-      setError("Número de cliente no encontrado. Verifica que sea correcto o contacta a nuestro equipo de ventas.")
+      if (result.success && result.client) {
+        setClientInfo(result.client)
+        setError("")
+      } else {
+        setError("Número de cliente no encontrado. Verifica que sea correcto o contacta a nuestro equipo de ventas.")
+        setClientInfo(null)
+      }
+    } catch (error) {
+      console.error("[v0] Error validating client:", error)
+      setError("Error al validar el número de cliente. Por favor intenta de nuevo.")
       setClientInfo(null)
+    } finally {
+      setIsValidating(false)
     }
-
-    setIsValidating(false)
   }
 
   const handleContinue = () => {
@@ -116,8 +121,11 @@ export function ClientValidation({ onBack, onContinue }: ClientValidationProps) 
               <CardContent className="space-y-4">
                 <div className="grid gap-4">
                   <div className="space-y-1">
-                    <Label className="text-sm font-medium">Empresa</Label>
-                    <p className="text-sm">{clientInfo.companyName}</p>
+                    <Label className="text-sm font-medium">Cliente</Label>
+                    <p className="text-sm">{getCompanyName(clientInfo)}</p>
+                    {clientInfo.RFC && (
+                      <p className="text-xs text-muted-foreground">RFC: {clientInfo.RFC}</p>
+                    )}
                   </div>
 
                   <div className="space-y-1">
@@ -125,23 +133,26 @@ export function ClientValidation({ onBack, onContinue }: ClientValidationProps) 
                       <MapPin className="h-3 w-3" />
                       Dirección de Entrega
                     </Label>
-                    <p className="text-sm">{clientInfo.address}</p>
-                    <p className="text-sm text-muted-foreground">{clientInfo.city}</p>
+                    <p className="text-sm">{buildFullAddress(clientInfo)}</p>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-1">
-                      <Label className="text-sm font-medium">Contacto</Label>
-                      <p className="text-sm">{clientInfo.contactPerson}</p>
-                    </div>
+                    {clientInfo.correo && (
+                      <div className="space-y-1">
+                        <Label className="text-sm font-medium">Correo</Label>
+                        <p className="text-sm">{clientInfo.correo}</p>
+                      </div>
+                    )}
 
-                    <div className="space-y-1">
-                      <Label className="text-sm font-medium flex items-center gap-1">
-                        <Phone className="h-3 w-3" />
-                        Teléfono
-                      </Label>
-                      <p className="text-sm">{clientInfo.phone}</p>
-                    </div>
+                    {clientInfo.tel && (
+                      <div className="space-y-1">
+                        <Label className="text-sm font-medium flex items-center gap-1">
+                          <Phone className="h-3 w-3" />
+                          Teléfono
+                        </Label>
+                        <p className="text-sm">{clientInfo.tel}</p>
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -181,9 +192,9 @@ export function ClientValidation({ onBack, onContinue }: ClientValidationProps) 
       <Card>
         <CardContent className="pt-6">
           <div className="text-center space-y-2">
-            <h4 className="font-medium">Números de cliente de ejemplo para prueba:</h4>
+            <h4 className="font-medium">Ejemplos de números de cliente:</h4>
             <div className="flex flex-wrap justify-center gap-2">
-              {["CT001", "CT002", "CT003", "CT004", "CT005"].map((num) => (
+              {["001", "A100000", "A100001", "A100002", "A100010"].map((num) => (
                 <Button key={num} variant="outline" size="sm" onClick={() => setClientNumber(num)} className="text-xs">
                   {num}
                 </Button>
