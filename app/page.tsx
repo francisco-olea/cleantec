@@ -6,12 +6,15 @@ import { ProductCard } from "@/components/product-card"
 import { CartSidebar } from "@/components/cart-sidebar"
 import { CategoryFilter } from "@/components/category-filter"
 import { Footer } from "@/components/footer"
+import { Input } from "@/components/ui/input"
+import { Search } from "lucide-react"
 import type { Product } from "@/types/product"
 
 export default function HomePage() {
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState("Todos")
+  const [searchQuery, setSearchQuery] = useState("")
   const [products, setProducts] = useState<Product[]>([])
   const [categories, setCategories] = useState<string[]>(["Todos"])
   const [isLoading, setIsLoading] = useState(true)
@@ -52,8 +55,15 @@ export default function HomePage() {
     fetchProducts()
   }, [])
 
-  const filteredProducts =
-    selectedCategory === "Todos" ? products : products.filter((product) => product.category === selectedCategory)
+  // Filter products by category and search query
+  const filteredProducts = products.filter((product) => {
+    const matchesCategory = selectedCategory === "Todos" || product.category === selectedCategory
+    const matchesSearch =
+      searchQuery === "" ||
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.description.toLowerCase().includes(searchQuery.toLowerCase())
+    return matchesCategory && matchesSearch
+  })
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -66,6 +76,19 @@ export default function HomePage() {
             Encuentra todos los suministros de limpieza profesional que necesitas. Productos de alta calidad para
             mantener tus espacios impecables.
           </p>
+        </div>
+
+        <div className="mb-6">
+          <div className="relative max-w-2xl mx-auto">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
+            <Input
+              type="text"
+              placeholder="Buscar productos por nombre o descripción..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-10"
+            />
+          </div>
         </div>
 
         <CategoryFilter
@@ -88,7 +111,11 @@ export default function HomePage() {
 
             {filteredProducts.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-muted-foreground">No se encontraron productos en esta categoría.</p>
+                <p className="text-muted-foreground">
+                  {searchQuery
+                    ? "No se encontraron productos que coincidan con tu búsqueda."
+                    : "No se encontraron productos en esta categoría."}
+                </p>
               </div>
             )}
           </>

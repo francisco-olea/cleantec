@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useRouter, usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { LogOut, Home, Package, ShoppingCart } from "lucide-react"
+import { LogOut, Home, Package, ShoppingCart, Users } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
@@ -27,6 +27,11 @@ export function AdminLayout({ children }: AdminLayoutProps) {
       label: "Productos",
       href: "/admin/productos",
       icon: Package,
+    },
+    {
+      label: "Clientes",
+      href: "/admin/clientes",
+      icon: Users,
     },
     {
       label: "Pedidos",

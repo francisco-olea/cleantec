@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server"
 import { getDatabase, type OrderWithItems, type OrderItem } from "@/lib/db"
 import { jsPDF } from "jspdf"
+import { readFileSync } from "fs"
+import path from "path"
 
 export async function GET(request: Request, { params }: { params: { id: string } }) {
   try {
@@ -24,8 +26,19 @@ export async function GET(request: Request, { params }: { params: { id: string }
       format: "letter",
     })
 
+    // Load logo image
+    let logoBase64: string | null = null
+    try {
+      const logoPath = path.join(process.cwd(), "public", "images", "cleantec-logo.png")
+      const logoBuffer = readFileSync(logoPath)
+      logoBase64 = `data:image/png;base64,${logoBuffer.toString("base64")}`
+    } catch (error) {
+      console.error("[v0] Error loading logo:", error)
+      // Continue without logo if it fails
+    }
+
     // Generate PDF content
-    generatePDFContent(doc, order)
+    generatePDFContent(doc, order, logoBase64)
 
     // Get PDF as buffer
     const pdfBuffer = Buffer.from(doc.output("arraybuffer"))
@@ -44,7 +57,7 @@ export async function GET(request: Request, { params }: { params: { id: string }
   }
 }
 
-function generatePDFContent(doc: jsPDF, order: OrderWithItems) {
+function generatePDFContent(doc: jsPDF, order: OrderWithItems, logoBase64: string | null) {
   const primaryColor = [14, 146, 210] // #0e92d2
   const secondaryColor = [33, 151, 71] // #219747
   const textColor = [51, 51, 51] // #333333
@@ -55,17 +68,37 @@ function generatePDFContent(doc: jsPDF, order: OrderWithItems) {
   const margin = 12.7 // 50 points = ~12.7mm
   let yPos = margin
 
-  // Header
-  doc.setFillColor(...primaryColor)
-  doc.setTextColor(...primaryColor)
-  doc.setFontSize(28)
-  doc.setFont("helvetica", "bold")
-  doc.text("CLEAN TEC", margin, yPos)
+  // Header with logo
+  const logoHeight = 15 // mm
+  if (logoBase64) {
+    try {
+      // Add logo (30mm width, 15mm height to maintain aspect ratio)
+      doc.addImage(logoBase64, "PNG", margin, yPos, 30, logoHeight)
+      yPos += logoHeight + 3
+    } catch (error) {
+      console.error("[v0] Error adding logo to PDF:", error)
+      // Fallback to text header if logo fails
+      doc.setFillColor(...primaryColor)
+      doc.setTextColor(...primaryColor)
+      doc.setFontSize(28)
+      doc.setFont("helvetica", "bold")
+      doc.text("CLEAN TEC", margin, yPos)
+      yPos += 10
+    }
+  } else {
+    // Text header if no logo
+    doc.setFillColor(...primaryColor)
+    doc.setTextColor(...primaryColor)
+    doc.setFontSize(28)
+    doc.setFont("helvetica", "bold")
+    doc.text("CLEAN TEC", margin, yPos)
+    yPos += 10
+  }
 
   doc.setTextColor(...textColor)
   doc.setFontSize(10)
   doc.setFont("helvetica", "normal")
-  doc.text("Productos de Limpieza de Calidad", margin, yPos + 10)
+  doc.text("Productos de Limpieza de Calidad", margin, yPos)
 
   // Order number in top right
   doc.setFontSize(12)
@@ -243,15 +276,16 @@ function generatePDFContent(doc: jsPDF, order: OrderWithItems) {
   doc.setFontSize(8)
   doc.setTextColor(...textColor)
   doc.setFont("helvetica", "normal")
-  doc.text("Clean Tec | Tel: +506 1234-5678 | Email: info@cleantec.com", pageWidth / 2, footerY + 5, { align: "center" })
-  doc.text("San José, Costa Rica | www.cleantec.com", pageWidth / 2, footerY + 10, { align: "center" })
+  doc.text("Clean Tec | Tel: +506 2222-3333 / +506 8888-9999", pageWidth / 2, footerY + 5, { align: "center" })
+  doc.text("Email: ventas@cleantec.com / info@cleantec.com", pageWidth / 2, footerY + 10, { align: "center" })
+  doc.text("Cjon Revolución y 4ta, San Luis RC, Sonora", pageWidth / 2, footerY + 15, { align: "center" })
 
   doc.setFontSize(7)
   doc.setTextColor(153, 153, 153)
   doc.text(
     "Este documento es una confirmación de pedido. Los precios incluyen IVA. Gracias por su preferencia.",
     pageWidth / 2,
-    footerY + 18,
+    footerY + 23,
     { align: "center", maxWidth: pageWidth - margin * 2 },
   )
 }
