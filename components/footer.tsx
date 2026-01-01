@@ -29,16 +29,16 @@ export function Footer() {
                 <Phone className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm font-medium">Teléfono</p>
-                  <p className="text-sm text-muted-foreground">+506 2222-3333</p>
-                  <p className="text-sm text-muted-foreground">+506 8888-9999</p>
+                  <p className="text-sm text-muted-foreground">+52 653 130 1130</p>
+                  <p className="text-sm text-muted-foreground">+52 653 130 1131</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm font-medium">Email</p>
-                  <p className="text-sm text-muted-foreground">ventas@cleantec.com</p>
-                  <p className="text-sm text-muted-foreground">info@cleantec.com</p>
+                  <p className="text-sm text-muted-foreground">ventas@clean-tec.com.mx</p>
+                  <p className="text-sm text-muted-foreground">info@clean-tec.com.mx</p>
                 </div>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import { getDatabase } from "@/lib/db"
-import type { ClientInfo } from "@/lib/clients"
+import type { ClientInfo } from "@/lib/clients-client"
 
 // GET: Validate client number
 export async function GET(request: Request) {
@@ -51,4 +51,9 @@ export async function GET(request: Request) {
     return NextResponse.json({ success: false, error: "Error al obtener información del cliente" }, { status: 500 })
   }
 }
+
+
+
+
+
 
