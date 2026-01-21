@@ -93,6 +93,20 @@ export function Footer() {
               </a>
             </div>
           </div>
+          <div className="mt-4 text-center">
+            <p className="text-sm text-muted-foreground">
+              Realizado por{" "}
+              <a
+                href="https://fangosystems.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline transition-colors"
+              >
+                Fango Systems
+              </a>{" "}
+              2026
+            </p>
+          </div>
         </div>
       </div>
     </footer>
