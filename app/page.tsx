@@ -22,7 +22,7 @@ export default function HomePage() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const response = await fetch("/api/products?active=true")
+        const response = await fetch("/api/products?active=true", { cache: "no-store" })
         const data = await response.json()
 
         if (data.products) {

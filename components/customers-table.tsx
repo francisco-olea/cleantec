@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Pencil, Trash2 } from "lucide-react"
+import { Pencil, Trash2, ChevronLeft, ChevronRight } from "lucide-react"
 import { toast } from "sonner"
 
 interface Customer {
@@ -22,14 +22,23 @@ interface Customer {
   created_at: string
 }
 
+const ITEMS_PER_PAGE = 25
+
 export function CustomersTable() {
   const router = useRouter()
   const [customers, setCustomers] = useState<Customer[]>([])
   const [isLoading, setIsLoading] = useState(true)
+  const [currentPage, setCurrentPage] = useState(1)
+
+  // Pagination calculations
+  const totalPages = Math.ceil(customers.length / ITEMS_PER_PAGE)
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
+  const endIndex = startIndex + ITEMS_PER_PAGE
+  const paginatedCustomers = customers.slice(startIndex, endIndex)
 
   const fetchCustomers = async () => {
     try {
-      const response = await fetch("/api/customers")
+      const response = await fetch("/api/customers", { cache: "no-store" })
       const data = await response.json()
       setCustomers(data.customers || [])
     } catch (error) {
@@ -89,7 +98,7 @@ export function CustomersTable() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {customers.map((customer) => (
+          {paginatedCustomers.map((customer) => (
             <TableRow key={customer.id}>
               <TableCell className="font-medium">{customer.client_number}</TableCell>
               <TableCell>{customer.client_name}</TableCell>
@@ -129,6 +138,38 @@ export function CustomersTable() {
 
       {customers.length === 0 && (
         <div className="text-center py-8 text-muted-foreground">No hay clientes registrados</div>
+      )}
+
+      {/* Pagination Controls */}
+      {customers.length > 0 && (
+        <div className="flex items-center justify-between px-4 py-3 border-t">
+          <div className="text-sm text-muted-foreground">
+            Mostrando {startIndex + 1} - {Math.min(endIndex, customers.length)} de {customers.length} clientes
+          </div>
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+            >
+              <ChevronLeft className="w-4 h-4 mr-1" />
+              Anterior
+            </Button>
+            <span className="text-sm px-2">
+              Página {currentPage} de {totalPages}
+            </span>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+              disabled={currentPage === totalPages}
+            >
+              Siguiente
+              <ChevronRight className="w-4 h-4 ml-1" />
+            </Button>
+          </div>
+        </div>
       )}
     </div>
   )

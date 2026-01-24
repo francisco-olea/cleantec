@@ -39,7 +39,7 @@ export function CustomerForm({ customerId }: CustomerFormProps) {
 
   const fetchCustomer = async () => {
     try {
-      const response = await fetch(`/api/customers/${customerId}`)
+      const response = await fetch(`/api/customers/${customerId}`, { cache: "no-store" })
       const data = await response.json()
 
       if (data.customer) {

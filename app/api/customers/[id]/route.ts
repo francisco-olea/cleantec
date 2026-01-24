@@ -1,6 +1,10 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { getDatabase } from "@/lib/db"
 
+// Disable caching for this route
+export const dynamic = "force-dynamic"
+export const revalidate = 0
+
 interface Customer {
   id: number
   client_number: string
@@ -39,7 +43,11 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
       return NextResponse.json({ error: "Cliente no encontrado" }, { status: 404 })
     }
 
-    return NextResponse.json({ customer })
+    const response = NextResponse.json({ customer })
+    response.headers.set("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate")
+    response.headers.set("Pragma", "no-cache")
+    response.headers.set("Expires", "0")
+    return response
   } catch (error) {
     console.error("[v0] Error fetching customer:", error)
     return NextResponse.json({ error: "Error al obtener cliente" }, { status: 500 })

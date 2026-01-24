@@ -13,8 +13,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { MoreHorizontal, Eye, FileText, Download, Printer } from "lucide-react"
+import { MoreHorizontal, Eye, FileText, Download, Printer, ChevronLeft, ChevronRight } from "lucide-react"
 import type { OrderWithItems } from "@/lib/db"
+
+const ITEMS_PER_PAGE = 25
 
 interface OrdersTableProps {
   orders: OrderWithItems[]
@@ -24,6 +26,13 @@ interface OrdersTableProps {
 export function OrdersTable({ orders, onRefresh }: OrdersTableProps) {
   const [selectedOrder, setSelectedOrder] = useState<OrderWithItems | null>(null)
   const [detailsOpen, setDetailsOpen] = useState(false)
+  const [currentPage, setCurrentPage] = useState(1)
+
+  // Pagination calculations
+  const totalPages = Math.ceil(orders.length / ITEMS_PER_PAGE)
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
+  const endIndex = startIndex + ITEMS_PER_PAGE
+  const paginatedOrders = orders.slice(startIndex, endIndex)
 
   const handleViewDetails = (order: OrderWithItems) => {
     setSelectedOrder(order)
@@ -100,7 +109,7 @@ export function OrdersTable({ orders, onRefresh }: OrdersTableProps) {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {orders.map((order) => (
+            {paginatedOrders.map((order) => (
               <TableRow key={order.id}>
                 <TableCell className="font-medium">{order.order_number}</TableCell>
                 <TableCell>
@@ -145,6 +154,38 @@ export function OrdersTable({ orders, onRefresh }: OrdersTableProps) {
             ))}
           </TableBody>
         </Table>
+
+        {/* Pagination Controls */}
+        {orders.length > 0 && (
+          <div className="flex items-center justify-between px-4 py-3 border-t">
+            <div className="text-sm text-muted-foreground">
+              Mostrando {startIndex + 1} - {Math.min(endIndex, orders.length)} de {orders.length} pedidos
+            </div>
+            <div className="flex items-center gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                disabled={currentPage === 1}
+              >
+                <ChevronLeft className="w-4 h-4 mr-1" />
+                Anterior
+              </Button>
+              <span className="text-sm px-2">
+                Página {currentPage} de {totalPages}
+              </span>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                disabled={currentPage === totalPages}
+              >
+                Siguiente
+                <ChevronRight className="w-4 h-4 ml-1" />
+              </Button>
+            </div>
+          </div>
+        )}
       </div>
 
       {selectedOrder && (

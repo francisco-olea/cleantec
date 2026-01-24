@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server"
 import { getDatabase, type OrderWithItems, type OrderItem } from "@/lib/db"
 
+// Disable caching for this route
+export const dynamic = "force-dynamic"
+export const revalidate = 0
+
 // GET: Get a single order by ID
 export async function GET(request: Request, { params }: { params: { id: string } }) {
   try {
@@ -18,7 +22,11 @@ export async function GET(request: Request, { params }: { params: { id: string }
     const items = db.prepare("SELECT * FROM order_items WHERE order_id = ?").all(id) as OrderItem[]
     order.items = items
 
-    return NextResponse.json({ success: true, order })
+    const response = NextResponse.json({ success: true, order })
+    response.headers.set("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate")
+    response.headers.set("Pragma", "no-cache")
+    response.headers.set("Expires", "0")
+    return response
   } catch (error) {
     console.error("[v0] Error fetching order:", error)
     return NextResponse.json({ success: false, error: "Error al obtener el pedido" }, { status: 500 })

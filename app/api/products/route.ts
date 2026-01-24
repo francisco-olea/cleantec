@@ -1,6 +1,10 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { getDatabase, type Product, type ProductInput } from "@/lib/db"
 
+// Disable caching for this route
+export const dynamic = "force-dynamic"
+export const revalidate = 0
+
 // GET - Obtener todos los productos
 export async function GET(request: NextRequest) {
   try {
@@ -16,7 +20,11 @@ export async function GET(request: NextRequest) {
 
     const products = db.prepare(query).all() as Product[]
 
-    return NextResponse.json({ products })
+    const response = NextResponse.json({ products })
+    response.headers.set("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate")
+    response.headers.set("Pragma", "no-cache")
+    response.headers.set("Expires", "0")
+    return response
   } catch (error) {
     console.error("[v0] Error fetching products:", error)
     return NextResponse.json({ error: "Error al obtener productos" }, { status: 500 })

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
-import { Pencil, Trash2, Eye, EyeOff } from "lucide-react"
+import { Pencil, Trash2, Eye, EyeOff, ChevronLeft, ChevronRight } from "lucide-react"
 import { toast } from "sonner"
 import Image from "next/image"
 
@@ -21,14 +21,23 @@ interface DbProduct {
   active: number
 }
 
+const ITEMS_PER_PAGE = 25
+
 export function ProductsTable() {
   const router = useRouter()
   const [products, setProducts] = useState<DbProduct[]>([])
   const [isLoading, setIsLoading] = useState(true)
+  const [currentPage, setCurrentPage] = useState(1)
+
+  // Pagination calculations
+  const totalPages = Math.ceil(products.length / ITEMS_PER_PAGE)
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
+  const endIndex = startIndex + ITEMS_PER_PAGE
+  const paginatedProducts = products.slice(startIndex, endIndex)
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("/api/products")
+      const response = await fetch("/api/products", { cache: "no-store" })
       const data = await response.json()
       setProducts(data.products || [])
     } catch (error) {
@@ -105,7 +114,7 @@ export function ProductsTable() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {products.map((product) => (
+          {paginatedProducts.map((product) => (
             <TableRow key={product.id}>
               <TableCell>
                 <Image
@@ -156,6 +165,38 @@ export function ProductsTable() {
 
       {products.length === 0 && (
         <div className="text-center py-8 text-muted-foreground">No hay productos registrados</div>
+      )}
+
+      {/* Pagination Controls */}
+      {products.length > 0 && (
+        <div className="flex items-center justify-between px-4 py-3 border-t">
+          <div className="text-sm text-muted-foreground">
+            Mostrando {startIndex + 1} - {Math.min(endIndex, products.length)} de {products.length} productos
+          </div>
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+            >
+              <ChevronLeft className="w-4 h-4 mr-1" />
+              Anterior
+            </Button>
+            <span className="text-sm px-2">
+              Página {currentPage} de {totalPages}
+            </span>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+              disabled={currentPage === totalPages}
+            >
+              Siguiente
+              <ChevronRight className="w-4 h-4 ml-1" />
+            </Button>
+          </div>
+        </div>
       )}
     </div>
   )

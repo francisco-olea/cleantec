@@ -1,6 +1,10 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { getDatabase } from "@/lib/db"
 
+// Disable caching for this route
+export const dynamic = "force-dynamic"
+export const revalidate = 0
+
 interface Customer {
   id: number
   client_number: string
@@ -35,7 +39,11 @@ export async function GET(request: NextRequest) {
     const db = getDatabase()
     const customers = db.prepare("SELECT * FROM customers ORDER BY client_number").all() as Customer[]
 
-    return NextResponse.json({ customers })
+    const response = NextResponse.json({ customers })
+    response.headers.set("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate")
+    response.headers.set("Pragma", "no-cache")
+    response.headers.set("Expires", "0")
+    return response
   } catch (error) {
     console.error("[v0] Error fetching customers:", error)
     return NextResponse.json({ error: "Error al obtener clientes" }, { status: 500 })

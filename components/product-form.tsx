@@ -39,7 +39,7 @@ export function ProductForm({ productId }: ProductFormProps) {
 
   const fetchProduct = async () => {
     try {
-      const response = await fetch(`/api/products/${productId}`)
+      const response = await fetch(`/api/products/${productId}`, { cache: "no-store" })
       const data = await response.json()
 
       if (data.product) {

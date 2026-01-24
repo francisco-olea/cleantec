@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server"
 import { getDatabase, type CreateOrderInput, type OrderWithItems } from "@/lib/db"
 
+// Disable caching for this route
+export const dynamic = "force-dynamic"
+export const revalidate = 0
+
 // POST: Create a new order
 export async function POST(request: Request) {
   try {
@@ -97,7 +101,11 @@ export async function GET(request: Request) {
       order.items = getOrderItems.all(order.id) as any[]
     }
 
-    return NextResponse.json({ success: true, orders })
+    const response = NextResponse.json({ success: true, orders })
+    response.headers.set("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate")
+    response.headers.set("Pragma", "no-cache")
+    response.headers.set("Expires", "0")
+    return response
   } catch (error) {
     console.error("[v0] Error fetching orders:", error)
     return NextResponse.json({ success: false, error: "Error al obtener pedidos" }, { status: 500 })

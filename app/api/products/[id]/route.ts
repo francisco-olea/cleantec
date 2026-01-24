@@ -1,6 +1,10 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { getDatabase, type Product, type ProductInput } from "@/lib/db"
 
+// Disable caching for this route
+export const dynamic = "force-dynamic"
+export const revalidate = 0
+
 // GET - Obtener un producto específico
 export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
   try {
@@ -11,7 +15,11 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
       return NextResponse.json({ error: "Producto no encontrado" }, { status: 404 })
     }
 
-    return NextResponse.json({ product })
+    const response = NextResponse.json({ product })
+    response.headers.set("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate")
+    response.headers.set("Pragma", "no-cache")
+    response.headers.set("Expires", "0")
+    return response
   } catch (error) {
     console.error("[v0] Error fetching product:", error)
     return NextResponse.json({ error: "Error al obtener producto" }, { status: 500 })
