@@ -9,6 +9,13 @@ import { Footer } from "@/components/footer"
 import { Input } from "@/components/ui/input"
 import { Search } from "lucide-react"
 import type { Product } from "@/types/product"
+import Image from "next/image"
+
+const bannerImages = [
+  { src: "/images/banners/banner-1.jpg", alt: "Promocion 1" },
+  { src: "/images/banners/banner-2.jpg", alt: "Promocion 2" },
+  { src: "/images/banners/banner-3.jpg", alt: "Promocion 3" },
+]
 
 export default function HomePage() {
   const [isCartOpen, setIsCartOpen] = useState(false)
@@ -18,6 +25,7 @@ export default function HomePage() {
   const [products, setProducts] = useState<Product[]>([])
   const [categories, setCategories] = useState<string[]>(["Todos"])
   const [isLoading, setIsLoading] = useState(true)
+  const [activeBannerIndex, setActiveBannerIndex] = useState(0)
 
   useEffect(() => {
     async function fetchProducts() {
@@ -55,6 +63,14 @@ export default function HomePage() {
     fetchProducts()
   }, [])
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setActiveBannerIndex((prev) => (prev + 1) % bannerImages.length)
+    }, 5000)
+
+    return () => clearInterval(intervalId)
+  }, [])
+
   // Filter products by category and search query
   const filteredProducts = products.filter((product) => {
     const matchesCategory = selectedCategory === "Todos" || product.category === selectedCategory
@@ -88,6 +104,23 @@ export default function HomePage() {
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10"
             />
+          </div>
+        </div>
+
+        <div className="mb-8">
+          <div className="relative w-full max-w-2xl mx-auto h-44 sm:h-48 overflow-hidden rounded-xl border bg-gradient-to-r from-emerald-50 via-slate-50 to-amber-50">
+            {bannerImages.map((banner, index) => (
+              <Image
+                key={banner.src}
+                src={banner.src}
+                alt={banner.alt}
+                fill
+                priority={index === 0}
+                className={`object-contain transition-opacity duration-700 ${
+                  index === activeBannerIndex ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            ))}
           </div>
         </div>
 

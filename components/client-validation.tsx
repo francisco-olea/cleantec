@@ -20,6 +20,9 @@ export function ClientValidation({ onBack, onContinue }: ClientValidationProps) 
   const [clientInfo, setClientInfo] = useState<ClientInfo | null>(null)
   const [error, setError] = useState("")
   const [isValidating, setIsValidating] = useState(false)
+  const [isPublicPurchase, setIsPublicPurchase] = useState(true)
+  const [publicAddress, setPublicAddress] = useState("")
+  const [publicPhone, setPublicPhone] = useState("")
 
   const handleValidateClient = async () => {
     if (!clientNumber.trim()) {
@@ -58,6 +61,54 @@ export function ClientValidation({ onBack, onContinue }: ClientValidationProps) 
     }
   }
 
+  const handlePublicPurchase = async () => {
+    setIsValidating(true)
+    setError("")
+
+    try {
+      // Fetch client 001 (public/general)
+      const response = await fetch(`/api/clients?clientNumber=001`)
+      const result = await response.json()
+
+      if (result.success && result.client) {
+        setIsPublicPurchase(true)
+        setClientInfo(null)
+        setClientNumber("")
+        setError("")
+      } else {
+        setError("Error al cargar información de compra pública.")
+      }
+    } catch (error) {
+      console.error("[v0] Error loading public client:", error)
+      setError("Error al procesar la compra pública. Por favor intenta de nuevo.")
+    } finally {
+      setIsValidating(false)
+    }
+  }
+
+  const handlePublicContinue = () => {
+    if (!publicAddress.trim()) {
+      setError("Por favor ingresa la dirección de entrega")
+      return
+    }
+    if (!publicPhone.trim()) {
+      setError("Por favor ingresa un número de teléfono")
+      return
+    }
+
+    // Create client info for public purchase
+    const publicClientInfo: ClientInfo = {
+      clientNumber: "001",
+      clientName: "Público General",
+      direccion: publicAddress,
+      tel: publicPhone,
+    }
+
+    // Store client info for order confirmation
+    localStorage.setItem("selectedClient", JSON.stringify(publicClientInfo))
+    onContinue()
+  }
+
   return (
     <div className="max-w-2xl mx-auto space-y-6">
       <div className="flex items-center gap-2 mb-6">
@@ -75,7 +126,39 @@ export function ClientValidation({ onBack, onContinue }: ClientValidationProps) 
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
-          <div className="space-y-4">
+          <div className="space-y-3">
+            <div className="flex gap-2">
+              <Button
+                variant={!isPublicPurchase ? "default" : "outline"}
+                onClick={() => {
+                  setIsPublicPurchase(false)
+                  setPublicAddress("")
+                  setPublicPhone("")
+                  setError("")
+                }}
+                className="flex-1"
+              >
+                <User className="h-4 w-4 mr-2" />
+                Cliente Registrado
+              </Button>
+              <Button
+                variant={isPublicPurchase ? "default" : "outline"}
+                onClick={handlePublicPurchase}
+                disabled={isValidating}
+                className="flex-1"
+              >
+                <User className="h-4 w-4 mr-2" />
+                Público General
+              </Button>
+            </div>
+            <p className="text-sm text-center text-muted-foreground">
+              Si ya tienes código de cliente, da click en Cliente Registrado
+            </p>
+          </div>
+
+          {!isPublicPurchase ? (
+            <>
+              <div className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="clientNumber">Número de Cliente</Label>
               <div className="flex gap-2">
@@ -175,34 +258,95 @@ export function ClientValidation({ onBack, onContinue }: ClientValidationProps) 
               </p>
               <div className="space-y-2 text-sm">
                 <p>
-                  <strong>Teléfono:</strong> +52 55 1234-5678
+                  <strong>Teléfono:</strong> +52 653 530 7164
                 </p>
                 <p>
                   <strong>Email:</strong> ventas@cleantec.com
                 </p>
                 <p>
-                  <strong>Horario:</strong> Lunes a Viernes, 8:00 AM - 6:00 PM
+                  <strong>Horario:</strong> Lunes a Viernes, 8:00 AM - 5:00 PM, Sábados 8:00 AM - 2:00 PM
                 </p>
               </div>
             </div>
           )}
+            </>
+          ) : (
+            <>
+              <div className="space-y-4">
+                <Alert className="border-blue-500 bg-blue-500/10">
+                  <User className="h-4 w-4 text-blue-500" />
+                  <AlertDescription className="text-blue-700 dark:text-blue-300">
+                    Compra como público general. Por favor ingresa tu dirección de entrega y teléfono de contacto.
+                  </AlertDescription>
+                </Alert>
+
+                {error && (
+                  <Alert variant="destructive">
+                    <AlertCircle className="h-4 w-4" />
+                    <AlertDescription>{error}</AlertDescription>
+                  </Alert>
+                )}
+
+                <div className="space-y-2">
+                  <Label htmlFor="publicAddress">
+                    <MapPin className="h-3 w-3 inline mr-1" />
+                    Dirección de Entrega *
+                  </Label>
+                  <Input
+                    id="publicAddress"
+                    placeholder="Calle, número, colonia, ciudad, estado"
+                    value={publicAddress}
+                    onChange={(e) => setPublicAddress(e.target.value)}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="publicPhone">
+                    <Phone className="h-3 w-3 inline mr-1" />
+                    Teléfono de Contacto *
+                  </Label>
+                  <Input
+                    id="publicPhone"
+                    type="tel"
+                    placeholder="Ej: 6535307164"
+                    value={publicPhone}
+                    onChange={(e) => setPublicPhone(e.target.value)}
+                  />
+                </div>
+
+                <div className="pt-4">
+                  <Button 
+                    onClick={handlePublicContinue} 
+                    className="w-full" 
+                    size="lg"
+                    disabled={!publicAddress.trim() || !publicPhone.trim()}
+                  >
+                    Continuar con la Compra
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </div>
+              </div>
+            </>
+          )}
         </CardContent>
       </Card>
 
-      <Card>
-        <CardContent className="pt-6">
-          <div className="text-center space-y-2">
-            <h4 className="font-medium">Ejemplos de números de cliente:</h4>
-            <div className="flex flex-wrap justify-center gap-2">
-              {["001", "A100000", "A100001", "A100002", "A100010"].map((num) => (
-                <Button key={num} variant="outline" size="sm" onClick={() => setClientNumber(num)} className="text-xs">
-                  {num}
-                </Button>
-              ))}
+      {!isPublicPurchase && (
+        <Card>
+          <CardContent className="pt-6">
+            <div className="text-center space-y-2">
+              <h4 className="font-medium">Ejemplos de números de cliente:</h4>
+              <div className="flex flex-wrap justify-center gap-2">
+                {["001", "A100000", "A100001", "A100002", "A100010"].map((num) => (
+                  <Button key={num} variant="outline" size="sm" onClick={() => setClientNumber(num)} className="text-xs">
+                    {num}
+                  </Button>
+                ))}
+              </div>
             </div>
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      )}
     </div>
   )
 }

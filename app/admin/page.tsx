@@ -28,7 +28,7 @@ export default function AdminLoginPage() {
     e.preventDefault()
 
     // Simple password check (in production, use proper authentication)
-    if (password === "cleantec2024") {
+    if (password === "cleantec2026") {
       sessionStorage.setItem("admin_authenticated", "true")
       router.push("/admin/productos")
     } else {
@@ -70,7 +70,6 @@ export default function AdminLoginPage() {
               Iniciar Sesión
             </Button>
 
-            <p className="text-xs text-muted-foreground text-center">Contraseña de prueba: cleantec2024</p>
           </form>
         </CardContent>
       </Card>

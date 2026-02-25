@@ -248,7 +248,7 @@ function generatePDFContent(doc: jsPDF, order: OrderWithItems, logoBase64: strin
 
   yPos += 6
 
-  doc.text("IVA (16%):", totalsX, yPos, { align: "right" })
+  doc.text("IVA (8%):", totalsX, yPos, { align: "right" })
   doc.text(`$${order.iva.toFixed(2)}`, pageWidth - margin - 2, yPos, { align: "right" })
 
   yPos += 6
@@ -283,7 +283,7 @@ function generatePDFContent(doc: jsPDF, order: OrderWithItems, logoBase64: strin
   doc.setFontSize(7)
   doc.setTextColor(153, 153, 153)
   doc.text(
-    "Este documento es una confirmación de pedido. Los precios incluyen IVA. Gracias por su preferencia.",
+    "Este documento es una confirmación de pedido. Los precios incluyen IVA (8%). Gracias por su preferencia.",
     pageWidth / 2,
     footerY + 23,
     { align: "center", maxWidth: pageWidth - margin * 2 },

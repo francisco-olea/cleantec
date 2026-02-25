@@ -41,15 +41,20 @@ export function OrderConfirmation({ onComplete }: OrderConfirmationProps) {
 
     try {
       // Prepare order data
+      // Prices already include 8% IVA, so we deduct it to show breakdown
+      const totalWithIva = state.total
+      const subtotal = totalWithIva / 1.08
+      const iva = totalWithIva - subtotal
+
       const orderData = {
         client_number: clientInfo.clientNumber,
         client_name: clientInfo.clientName,
         client_company: getCompanyName(clientInfo),
         client_address: buildFullAddress(clientInfo),
         client_phone: clientInfo.tel || "",
-        subtotal: state.total,
-        iva: state.total * 0.16,
-        total: state.total * 1.16,
+        subtotal: subtotal,
+        iva: iva,
+        total: totalWithIva,
         items: state.items.map((item) => ({
           product_id: item.id,
           product_name: item.name,
@@ -81,7 +86,14 @@ export function OrderConfirmation({ onComplete }: OrderConfirmationProps) {
           localStorage.removeItem("selectedClient")
         }, 3000)
       } else {
-        alert("Error al enviar el pedido. Por favor intenta de nuevo.")
+        // Display detailed error message, especially for stock issues
+        let errorMessage = result.error || "Error al enviar el pedido. Por favor intenta de nuevo."
+        
+        if (result.details && Array.isArray(result.details)) {
+          errorMessage += "\n\n" + result.details.join("\n")
+        }
+        
+        alert(errorMessage)
       }
     } catch (error) {
       console.error("[v0] Error submitting order:", error)
@@ -252,20 +264,20 @@ export function OrderConfirmation({ onComplete }: OrderConfirmationProps) {
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">
                   <span>Subtotal ({itemCount} productos)</span>
-                  <span>${state.total.toFixed(2)}</span>
+                  <span>${(state.total / 1.08).toFixed(2)}</span>
+                </div>
+                <div className="flex justify-between text-sm text-muted-foreground">
+                  <span>IVA (8%)</span>
+                  <span>${(state.total - state.total / 1.08).toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-sm text-muted-foreground">
                   <span>Costo de envío</span>
                   <span>Incluido</span>
                 </div>
-                <div className="flex justify-between text-sm text-muted-foreground">
-                  <span>IVA (16%)</span>
-                  <span>${(state.total * 0.16).toFixed(2)}</span>
-                </div>
                 <Separator />
                 <div className="flex justify-between font-semibold text-lg">
                   <span>Total</span>
-                  <span className="text-primary">${(state.total * 1.16).toFixed(2)}</span>
+                  <span className="text-primary">${state.total.toFixed(2)}</span>
                 </div>
               </div>
 
@@ -301,7 +313,7 @@ export function OrderConfirmation({ onComplete }: OrderConfirmationProps) {
               <div className="space-y-3 text-sm">
                 <h4 className="font-medium">Términos y Condiciones</h4>
                 <ul className="space-y-1 text-muted-foreground">
-                  <li>• Los precios incluyen IVA</li>
+                  <li>• Los precios incluyen IVA (8%)</li>
                   <li>• Entrega gratuita en pedidos mayores a $500</li>
                   <li>• Tiempo de entrega: 1-3 días hábiles</li>
                   <li>• Garantía de calidad en todos los productos</li>

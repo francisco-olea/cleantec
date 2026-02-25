@@ -37,7 +37,6 @@ export function Footer() {
                 <div>
                   <p className="text-sm font-medium">Email</p>
                   <p className="text-sm text-muted-foreground">ventas@clean-tec.com.mx</p>
-                  <p className="text-sm text-muted-foreground">info@clean-tec.com.mx</p>
                 </div>
               </div>
             </div>
@@ -68,7 +67,7 @@ export function Footer() {
                   <p className="text-sm font-medium">Lunes a Viernes</p>
                   <p className="text-sm text-muted-foreground">8:00 AM - 5:00 PM</p>
                   <p className="text-sm font-medium mt-2">Sábados</p>
-                  <p className="text-sm text-muted-foreground">8:00 AM - 12:00 PM</p>
+                  <p className="text-sm text-muted-foreground">8:00 AM - 2:00 PM</p>
                   <p className="text-sm font-medium mt-2">Domingos</p>
                   <p className="text-sm text-muted-foreground">Cerrado</p>
                 </div>
