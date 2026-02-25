@@ -94,19 +94,6 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="mb-6">
-          <div className="relative max-w-2xl mx-auto">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
-            <Input
-              type="text"
-              placeholder="Buscar productos por nombre o descripción..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10"
-            />
-          </div>
-        </div>
-
         <div className="mb-8">
           <div className="relative w-full max-w-2xl mx-auto h-44 sm:h-48 overflow-hidden rounded-xl border bg-gradient-to-r from-emerald-50 via-slate-50 to-amber-50">
             {bannerImages.map((banner, index) => (
@@ -121,6 +108,19 @@ export default function HomePage() {
                 }`}
               />
             ))}
+          </div>
+        </div>
+
+        <div className="mb-6">
+          <div className="relative max-w-2xl mx-auto">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
+            <Input
+              type="text"
+              placeholder="Buscar productos por nombre o descripción..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-10"
+            />
           </div>
         </div>
 
