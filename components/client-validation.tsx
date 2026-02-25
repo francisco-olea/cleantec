@@ -331,22 +331,6 @@ export function ClientValidation({ onBack, onContinue }: ClientValidationProps) 
         </CardContent>
       </Card>
 
-      {!isPublicPurchase && (
-        <Card>
-          <CardContent className="pt-6">
-            <div className="text-center space-y-2">
-              <h4 className="font-medium">Ejemplos de números de cliente:</h4>
-              <div className="flex flex-wrap justify-center gap-2">
-                {["001", "A100000", "A100001", "A100002", "A100010"].map((num) => (
-                  <Button key={num} variant="outline" size="sm" onClick={() => setClientNumber(num)} className="text-xs">
-                    {num}
-                  </Button>
-                ))}
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      )}
     </div>
   )
 }
