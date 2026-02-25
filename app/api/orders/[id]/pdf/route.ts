@@ -276,7 +276,7 @@ function generatePDFContent(doc: jsPDF, order: OrderWithItems, logoBase64: strin
   doc.setFontSize(8)
   doc.setTextColor(...textColor)
   doc.setFont("helvetica", "normal")
-  doc.text("Clean Tec | Tel: +506 2222-3333 / +506 8888-9999", pageWidth / 2, footerY + 5, { align: "center" })
+  doc.text("Clean Tec | Tel: +52 653 530 7164", pageWidth / 2, footerY + 5, { align: "center" })
   doc.text("Email: ventas@cleantec.com / info@cleantec.com", pageWidth / 2, footerY + 10, { align: "center" })
   doc.text("Cjon Revolución y 4ta, San Luis RC, Sonora", pageWidth / 2, footerY + 15, { align: "center" })
 

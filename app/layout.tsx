@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   title: "Clean Tec - Suministros de Limpieza",
   description: "Catálogo en línea de productos de limpieza profesional",
   generator: "v0.app",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 }
 
 export default function RootLayout({

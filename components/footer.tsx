@@ -29,8 +29,7 @@ export function Footer() {
                 <Phone className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm font-medium">Teléfono</p>
-                  <p className="text-sm text-muted-foreground">+52 653 130 1130</p>
-                  <p className="text-sm text-muted-foreground">+52 653 130 1131</p>
+                  <p className="text-sm text-muted-foreground">+52 653 530 7164</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
