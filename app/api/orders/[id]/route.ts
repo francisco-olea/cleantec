@@ -6,10 +6,10 @@ export const dynamic = "force-dynamic"
 export const revalidate = 0
 
 // GET: Get a single order by ID
-export async function GET(request: Request, { params }: { params: { id: string } }) {
+export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const { id } = await params;
     const db = getDatabase()
-    const { id } = params
 
     // Get order
     const order = db.prepare("SELECT * FROM orders WHERE id = ?").get(id) as OrderWithItems | undefined

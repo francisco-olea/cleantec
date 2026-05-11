@@ -34,10 +34,11 @@ interface CustomerInput {
 }
 
 // GET - Obtener un cliente específico
-export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const { id } = await params;
     const db = getDatabase()
-    const customer = db.prepare("SELECT * FROM customers WHERE id = ?").get(params.id) as Customer | undefined
+    const customer = db.prepare("SELECT * FROM customers WHERE id = ?").get(id) as Customer | undefined
 
     if (!customer) {
       return NextResponse.json({ error: "Cliente no encontrado" }, { status: 404 })
@@ -55,8 +56,9 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
 }
 
 // PUT - Actualizar cliente
-export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const { id } = await params;
     const body = (await request.json()) as CustomerInput
     const db = getDatabase()
 
@@ -64,7 +66,7 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
     if (body.client_number) {
       const existing = db
         .prepare("SELECT id FROM customers WHERE client_number = ? AND id != ?")
-        .get(body.client_number, params.id)
+        .get(body.client_number, id)
       if (existing) {
         return NextResponse.json({ error: "El número de cliente ya existe" }, { status: 400 })
       }
@@ -96,10 +98,10 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
       body.cp !== undefined ? body.cp : null,
       body.correo !== undefined ? body.correo : null,
       body.tel !== undefined ? body.tel : null,
-      params.id,
+      id,
     )
 
-    const updatedCustomer = db.prepare("SELECT * FROM customers WHERE id = ?").get(params.id) as Customer
+    const updatedCustomer = db.prepare("SELECT * FROM customers WHERE id = ?").get(id) as Customer
 
     return NextResponse.json({ customer: updatedCustomer })
   } catch (error) {
@@ -109,12 +111,13 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
 }
 
 // DELETE - Eliminar cliente
-export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const { id } = await params;
     const db = getDatabase()
 
     // Check if customer has orders
-    const orders = db.prepare("SELECT COUNT(*) as count FROM orders WHERE client_number = (SELECT client_number FROM customers WHERE id = ?)").get(params.id) as { count: number } | undefined
+    const orders = db.prepare("SELECT COUNT(*) as count FROM orders WHERE client_number = (SELECT client_number FROM customers WHERE id = ?)").get(id) as { count: number } | undefined
 
     if (orders && orders.count > 0) {
       return NextResponse.json(
@@ -124,7 +127,7 @@ export async function DELETE(request: NextRequest, { params }: { params: { id: s
     }
 
     const stmt = db.prepare("DELETE FROM customers WHERE id = ?")
-    stmt.run(params.id)
+    stmt.run(id)
 
     return NextResponse.json({ message: "Cliente eliminado exitosamente" })
   } catch (error) {

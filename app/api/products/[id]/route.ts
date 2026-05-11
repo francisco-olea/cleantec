@@ -6,10 +6,11 @@ export const dynamic = "force-dynamic"
 export const revalidate = 0
 
 // GET - Obtener un producto específico
-export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const { id } = await params;
     const db = getDatabase()
-    const product = db.prepare("SELECT * FROM products WHERE id = ?").get(params.id) as Product | undefined
+    const product = db.prepare("SELECT * FROM products WHERE id = ?").get(id) as Product | undefined
 
     if (!product) {
       return NextResponse.json({ error: "Producto no encontrado" }, { status: 404 })
@@ -27,8 +28,9 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
 }
 
 // PUT - Actualizar producto
-export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const { id } = await params;
     const body = (await request.json()) as Partial<ProductInput> & { active?: number }
     const db = getDatabase()
 
@@ -57,10 +59,10 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
       body.stock !== undefined ? body.stock : null,
       body.active !== undefined ? body.active : null,
       body.sku || null,
-      params.id,
+      id,
     )
 
-    const updatedProduct = db.prepare("SELECT * FROM products WHERE id = ?").get(params.id) as Product
+    const updatedProduct = db.prepare("SELECT * FROM products WHERE id = ?").get(id) as Product
 
     return NextResponse.json({ product: updatedProduct })
   } catch (error) {
@@ -70,13 +72,14 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
 }
 
 // DELETE - Eliminar producto (soft delete)
-export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const { id } = await params;
     const db = getDatabase()
 
     // Soft delete - marcar como inactivo
     const stmt = db.prepare("UPDATE products SET active = 0, updated_at = CURRENT_TIMESTAMP WHERE id = ?")
-    stmt.run(params.id)
+    stmt.run(id)
 
     return NextResponse.json({ message: "Producto eliminado exitosamente" })
   } catch (error) {

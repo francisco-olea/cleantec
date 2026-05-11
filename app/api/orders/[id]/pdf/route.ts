@@ -4,10 +4,10 @@ import { jsPDF } from "jspdf"
 import { readFileSync } from "fs"
 import path from "path"
 
-export async function GET(request: Request, { params }: { params: { id: string } }) {
+export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const { id } = await params;
     const db = getDatabase()
-    const { id } = params
 
     // Get order with items
     const order = db.prepare("SELECT * FROM orders WHERE id = ?").get(id) as OrderWithItems | undefined
